@@ -161,9 +161,6 @@
     <ClInclude Include="Middle Layer\clsUserManager.h" />
     <ClInclude Include="UI Layer\clsScreen.h" />
   </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="C11Bank.rc" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
