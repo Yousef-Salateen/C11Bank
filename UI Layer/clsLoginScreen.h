@@ -3,6 +3,7 @@
 #include "clsScreen.h"
 #include "../Middle Layer/clsSession.h"
 #include "../External Libs/clsInputValidate.h"
+#include "clsMainMenuScreen.h"
 
 class clsLoginScreen :
     protected clsScreen
@@ -22,6 +23,8 @@ private:
 			Password = clsInputValidate::Read<std::string>("Please Enter Your Password: ");
 			Session = clsSession(Username, Password);
 		}
+
+		clsMainMenuScreen::ShowMainMenuScreen();
     }
 public:
 

@@ -28,7 +28,7 @@ protected:
 	static void _WaitForEnter()
 	{
 		std::cout << "\nPress Enter to continue...";
-		cin.get();
+		std::cin.get();
 	}
 
 	static void _ClearScreen()
