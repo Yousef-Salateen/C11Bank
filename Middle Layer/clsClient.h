@@ -7,9 +7,6 @@ class clsClient :
     public clsPerson
 {
 private:
-	enum enMode : char { _EmptyMode = 0, _UpdateMode, _AddNewMode };
-
-	enMode _Mode;
 	std::string _AccNumber;
 	std::string _PinCode;
 	double _Balance = 0.0;
@@ -33,7 +30,7 @@ private:
 public:
 	clsClient(const std::string& FirstName, const std::string& LastName, const std::string& Email, const std::string& Phone,
 		const std::string& AccNumber, const std::string& PinCode, double Balance, enMode Mode)
-		: clsPerson(FirstName, LastName, Email, Phone), _AccNumber(AccNumber), _PinCode(PinCode), _Balance(Balance), _Mode(Mode)
+		: clsPerson(FirstName, LastName, Email, Phone, Mode), _AccNumber(AccNumber), _PinCode(PinCode), _Balance(Balance)
 	{
 
 	}
@@ -73,10 +70,15 @@ public:
 		_PinCode = PinCode;
 	}
 
-	void setBalance(double Balance)
+	bool setBalance(double Balance)
 	{
+		if (Balance < 0)
+			return false;
+
 		_Balance = Balance;
+		return true;
 	}
 
 	friend class clsClientsData;
+	friend class clsClientManager;
 };

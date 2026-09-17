@@ -10,12 +10,18 @@ private:
 	std::string _Email;
 	std::string _Phone;
 
+protected:
+	enum enMode : char { _EmptyMode = 0, _UpdateMode, _AddNewMode };
+
+	enMode _Mode;
 public:
-	clsPerson(const std::string& FirstName, const std::string& LastName, const std::string& Email, const std::string& Phone) :
-		_FirstName(FirstName), _LastName(LastName), _Email(Email), _Phone(Phone)
+	clsPerson(const std::string& FirstName, const std::string& LastName, const std::string& Email, const std::string& Phone, enMode Mode = enMode::_EmptyMode) :
+		_FirstName(FirstName), _LastName(LastName), _Email(Email), _Phone(Phone), _Mode(Mode)
 	{
 
 	}
+
+	virtual ~clsPerson() = default;
 
 	std::string FirstName() const
 	{
