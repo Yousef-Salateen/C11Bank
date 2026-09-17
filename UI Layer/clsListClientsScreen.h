@@ -2,6 +2,7 @@
 
 #include "clsScreen.h"
 #include "../Global.h"
+#include "../Middle Layer/clsSession.h"
 
 class clsListClientsScreen
 	: protected clsScreen
@@ -20,7 +21,7 @@ public:
 
 	static void PrintClientList()
 	{
-		if (_AccessMessage(Users.HasPermission(enPermissions::eListClients)))
+		if (!_AccessMessage(Users.HasPermission(clsSession::CurrentUser.Username(), enPermissions::eListClients)))
 			return;
 
 

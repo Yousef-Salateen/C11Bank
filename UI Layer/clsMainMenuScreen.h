@@ -75,7 +75,7 @@ private:
 	static void _ShowClientsListScreen()
 	{
 		_ClearScreen();
-		//clsListClientsScreen::PrintClientList();
+		clsListClientsScreen::PrintClientList();
 	}
 
 	static void _ShowAddNewClientScreen()

@@ -172,11 +172,6 @@ public:
 		return User->HasPermission(Permission);
 	}
 
-	bool HasPermission(enPermissions Permission)
-	{
-		return clsSession::CurrentUser.HasPermission(Permission);
-	}
-
 	size_t Amount()
 	{
 		return _vUsers.size();
