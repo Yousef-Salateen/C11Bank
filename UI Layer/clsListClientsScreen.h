@@ -21,7 +21,7 @@ public:
 
 	static void PrintClientList()
 	{
-		if (!_AccessMessage(Users.HasPermission(clsSession::CurrentUser.Username(), enPermissions::eListClients)))
+		if (!_AccessMessage(clsSession::CurrentUser.HasPermission( enPermissions::eListClients)))
 			return;
 
 
