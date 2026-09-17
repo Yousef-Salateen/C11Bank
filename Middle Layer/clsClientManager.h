@@ -1,0 +1,207 @@
+#pragma once
+
+#include <vector>
+#include "clsManager.h"
+#include "clsClient.h"
+#include "../Data Layer/clsData.h"
+
+class clsClientManager : protected clsManager
+{
+private:
+	std::vector<clsClient*> _vClients;
+    double TotalBalance = 0.0;
+
+	clsClient* _Find(const std::string& AccNumber) const
+	{
+		for (const clsClient* Client : _vClients)
+		{
+			if (Client->AccNumber() == AccNumber)
+			{
+				return const_cast<clsClient*>(Client);
+			}
+		}
+
+		return nullptr;
+	}
+
+	clsClient* _Find(const std::string& AccNumber, const std::string& PinCode) const
+	{
+		for (const clsClient* Client : _vClients)
+		{
+			if (Client->AccNumber() == AccNumber && Client->PinCode() == PinCode)
+			{
+				return const_cast<clsClient*>(Client);
+			}
+		}
+		return nullptr;
+	}
+
+	void _AddClient(clsClient* Client)
+	{
+		_vClients.emplace_back(Client);
+		TotalBalance += Client->Balance();
+	}
+
+	void _UpdateClient(clsClient* Client, const clsClient& NewInfo)
+	{
+		TotalBalance -= Client->Balance();
+		*Client = NewInfo;
+		TotalBalance += Client->Balance();
+	}
+
+	size_t _PtrIndex(clsClient* ptr)
+	{
+		for (size_t i = 0; i < _vClients.size(); i++)
+		{
+			if (_vClients[i] == ptr)
+			{
+				return i;
+			}
+		}
+
+		return -1;
+	}
+
+	void _DeleteClient(clsClient* Client)
+	{
+		size_t index = _PtrIndex(Client);
+		if (index != -1)
+		{
+			TotalBalance -= Client->Balance();
+			delete Client;
+			_vClients.erase(_vClients.begin() + index);
+		}
+	}
+
+	void _Deposit(double Amount, clsClient* Client)
+	{
+		Client->setBalance(Client->Balance() + Amount);
+		TotalBalance += Amount;
+	}
+
+	bool _Withdraw(double Amount, clsClient* Client)
+	{
+		if (Amount > Client->Balance())
+			return false;
+
+		bool SuccessfulWithdraw = Client->setBalance(Client->Balance() - Amount);
+		if(SuccessfulWithdraw)
+			TotalBalance -= Amount;
+
+		return SuccessfulWithdraw;
+	}
+
+public:
+	clsClientManager() : _vClients(clsData::LoadClients())
+	{
+		for (const clsClient* Client : _vClients)
+		{
+			TotalBalance += Client->Balance();
+		}
+	}
+
+	~clsClientManager()
+	{
+		Save();
+		for (clsClient* Client : _vClients)
+		{
+			delete Client;
+		}
+	}
+
+	void Save() const
+	{
+		clsData::Save(_vClients);
+	}
+
+	bool IsClientExist(const std::string& AccNumber) const
+	{
+		return _Find(AccNumber) != nullptr;
+	}
+
+	clsClient Find(const std::string& AccNumber) const
+	{
+		clsClient* Client = _Find(AccNumber);
+
+		return Client ? *Client : clsClient::_EmptyObject();
+	}
+
+	clsClient Find(const std::string& AccNumber, const std::string& PinCode) const
+	{
+		clsClient* Client = _Find(AccNumber, PinCode);
+
+		return Client ? *Client : clsClient::_EmptyObject();
+	}
+
+	enSaveResult SaveClient(const clsClient& Client)
+	{
+		if (Client.IsEmpty())
+		{
+			return clsManager::enSaveResult::eFailedEmptyObject;
+		}
+		if (IsClientExist(Client.AccNumber()))
+		{
+			return clsManager::enSaveResult::eFailedExistingAccNumber;
+		}
+
+		switch (Client._Mode)
+		{
+		case clsClient::enMode::_AddNewMode:
+			_AddClient(new clsClient(Client));
+			break;
+
+		case clsClient::enMode::_UpdateMode:
+			clsClient* ptrClient = _Find(Client.AccNumber());
+			_UpdateClient(ptrClient, Client);
+			break;
+		}
+
+		Save();
+
+		return clsManager::enSaveResult::eSucceeded;
+	}
+
+	bool Delete(const std::string& AccNumber)
+	{
+		clsClient* Client = _Find(AccNumber);
+
+		if (Client)
+		{
+			_DeleteClient(Client);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	clsClient AddNewObject()
+	{
+		return clsClient("", "", "", "", "", "", 0.0, clsPerson::enMode::_AddNewMode);
+	}
+
+	double GetTotalBalance() const
+	{
+		return TotalBalance;
+	}
+
+	clsClient Client(size_t index)
+	{
+		if (index >= 0 && index < _vClients.size())
+			return *_vClients[index];
+		return clsClient::_EmptyObject();
+	}
+
+	void DepositTo(double Amount, const std::string& AccNumber)
+	{
+		clsClient* Client = _Find(AccNumber);
+		_Deposit(Amount, Client);
+	}
+
+	bool WithdrawFrom(double Amount, const std::string& AccNumber)
+	{
+		clsClient* Client = _Find(AccNumber);
+		return _Withdraw(Amount, Client);
+	}
+};

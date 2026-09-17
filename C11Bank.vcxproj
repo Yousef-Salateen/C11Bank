@@ -152,6 +152,8 @@
     <ClInclude Include="External Libs\clsString.h" />
     <ClInclude Include="External Libs\clsUtility.h" />
     <ClInclude Include="Middle Layer\clsClient.h" />
+    <ClInclude Include="Middle Layer\clsClientManager.h" />
+    <ClInclude Include="Middle Layer\clsManager.h" />
     <ClInclude Include="Middle Layer\clsPerson.h" />
     <ClInclude Include="Middle Layer\clsUser.h" />
   </ItemGroup>
