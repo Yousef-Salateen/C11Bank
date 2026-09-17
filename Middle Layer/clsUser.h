@@ -31,15 +31,12 @@ private:
 	}
 
 public:
-<<<<<<< HEAD
 	clsUser(const std::string& FirstName, const std::string& LastName, const std::string& Email, const std::string& Phone,
 		const std::string& Username, const std::string& Password, int Permissions, enMode Mode)
 		: clsPerson(FirstName, LastName, Email, Phone), _Username(Username), _Password(Password), _Permissions(Permissions), _Mode(Mode)
 	{
 	}
 
-=======
->>>>>>> c873f2aac11f4787b51384db9ee2d5c3999b2451
 	std::string Username() const
 	{
 		return _Username;
