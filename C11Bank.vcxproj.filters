@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="External Headers">
+      <UniqueIdentifier>{71c58bc0-4722-4db8-89f6-89f50970bb88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Middle Layer">
+      <UniqueIdentifier>{19ae73c0-9e28-4d2c-97eb-18eee67a63cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI Layer">
+      <UniqueIdentifier>{1afed307-59e1-48ed-a744-63a0c8ae38fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Data Layer">
+      <UniqueIdentifier>{8857f0aa-d2e6-46d8-85ab-48d20a3dc72d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C11Bank.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="External Libs\clsDate.h">
+      <Filter>External Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="External Libs\clsInputValidate.h">
+      <Filter>External Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="External Libs\clsPeriod.h">
+      <Filter>External Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="External Libs\clsString.h">
+      <Filter>External Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="External Libs\clsUtility.h">
+      <Filter>External Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Middle Layer\clsClient.h">
+      <Filter>Header Files\Middle Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Middle Layer\clsPerson.h">
+      <Filter>Header Files\Middle Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Middle Layer\clsUser.h">
+      <Filter>Header Files\Middle Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Data Layer\clsClientsData.h">
+      <Filter>Header Files\Data Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Data Layer\clsData.h">
+      <Filter>Header Files\Data Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Data Layer\clsUsersData.h">
+      <Filter>Header Files\Data Layer</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
