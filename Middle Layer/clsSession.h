@@ -6,17 +6,16 @@
 class clsSession
 {
 public:
-	clsUser CurrentUser;
+	inline static clsUser CurrentUser = (clsUser::_EmptyObject());
 	
 	clsSession(const std::string& Username, const std::string& Password)
-		: CurrentUser(Users.Find(Username, Password))
 	{
-		
+		CurrentUser = Users.Find(Username, Password);
 	}
 
 	~clsSession()
 	{
 		CurrentUser = Users.Find("", "");
 	}
-};
 
+};

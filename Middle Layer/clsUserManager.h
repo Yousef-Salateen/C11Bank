@@ -1,11 +1,12 @@
 #pragma once
 
-extern enum enPermissions;
+extern enum enPermissions : short;
 
 #include <vector>
 #include "clsManager.h"
 #include "clsUser.h"
 #include "../Data Layer/clsData.h"
+#include "clsSession.h"
 
 class clsUserManager :
     protected clsManager
@@ -155,7 +156,7 @@ public:
 
 	clsUser AddNewObject()
 	{
-		return clsUser("", "", "", "", "", "", 0.0, clsPerson::enMode::_AddNewMode);
+		return clsUser("", "", "", "", "", "", 0, clsPerson::enMode::_AddNewMode);
 	}
 
 	clsUser User(size_t index)
@@ -169,6 +170,16 @@ public:
 	{
 		clsUser* User = _Find(Username);
 		return User->HasPermission(Permission);
+	}
+
+	bool HasPermission(enPermissions Permission)
+	{
+		return clsSession::CurrentUser.HasPermission(Permission);
+	}
+
+	size_t Amount()
+	{
+		return _vUsers.size();
 	}
 };
 

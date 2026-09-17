@@ -1,6 +1,6 @@
 #pragma once
 
-extern enum enPermissions;
+extern enum enPermissions : short;
 
 #include "clsPerson.h"
 #include <string>
@@ -84,4 +84,5 @@ public:
 
 	friend class clsUsersData;
 	friend class clsUserManager;
+	friend class clsSession;
 };

@@ -204,4 +204,10 @@ public:
 		clsClient* Client = _Find(AccNumber);
 		return _Withdraw(Amount, Client);
 	}
+
+	size_t Amount()
+	{
+		return _vClients.size();
+	}
+
 };

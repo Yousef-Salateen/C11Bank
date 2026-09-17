@@ -17,12 +17,15 @@ protected:
 		std::cout << std::setw(37) << std::left << "" << "_________________________\n\n";
 	}
 
-	static void _AccessMessage(bool HasAccess)
+	static bool _AccessMessage(bool HasAccess)
 	{
 		if (HasAccess)
-			return;
+			return true;
 		else
+		{
 			_DrawScreenHeader("You don't have access to this. Contact your admin");
+			return false;
+		}
 	}
 
 	static void _WaitForEnter()
