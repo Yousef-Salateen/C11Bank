@@ -1,5 +1,7 @@
 #pragma once
 
+extern enum enPermissions;
+
 #include "clsPerson.h"
 #include <string>
 
@@ -75,5 +77,11 @@ public:
 		_Password = Password;
 	}
 
+	bool HasPermission (enPermissions Permission) const
+	{
+		return (_Permissions & Permission) == Permission;
+	}
+
 	friend class clsUsersData;
+	friend class clsUserManager;
 };

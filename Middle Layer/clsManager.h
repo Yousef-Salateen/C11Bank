@@ -3,6 +3,6 @@
 class clsManager
 {
 protected:
-	enum enSaveResult { eFailedEmptyObject = 0, eSucceeded, eFailedExistingAccNumber };
+	enum enSaveResult : char { eFailedEmptyObject = 0, eSucceeded, eFailedExistingAccNumber, eFailedExistingUsername };
 };
 
