@@ -3,23 +3,20 @@
 #include "clsUser.h"
 #include "../Global.h"
 
-//#include "../UI Layer/clsLoginScreen.h"
-
 class clsSession
 {
-private:
-	clsUser _CurrentUser;
-
 public:
+	clsUser CurrentUser;
+	
 	clsSession(const std::string& Username, const std::string& Password)
-		: _CurrentUser(Users.Find(Username, Password))
+		: CurrentUser(Users.Find(Username, Password))
 	{
 		
 	}
 
 	~clsSession()
 	{
-		_CurrentUser = Users.Find("", "");
+		CurrentUser = Users.Find("", "");
 	}
 };
 

@@ -159,6 +159,7 @@
     <ClInclude Include="Middle Layer\clsSession.h" />
     <ClInclude Include="Middle Layer\clsUser.h" />
     <ClInclude Include="Middle Layer\clsUserManager.h" />
+    <ClInclude Include="UI Layer\clsLoginScreen.h" />
     <ClInclude Include="UI Layer\clsScreen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

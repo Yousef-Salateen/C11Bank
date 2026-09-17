@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../Global.h"
 #include <iostream>
 #include <iomanip>
 
@@ -16,6 +15,25 @@ protected:
 			std::cout << std::setw(37) << std::left << "" << SubTitle << "\n";
 		}
 		std::cout << std::setw(37) << std::left << "" << "_________________________\n\n";
+	}
+
+	static void _AccessMessage(bool HasAccess)
+	{
+		if (HasAccess)
+			return;
+		else
+			_DrawScreenHeader("You don't have access to this. Contact your admin");
+	}
+
+	static void _WaitForEnter()
+	{
+		std::cout << "\nPress Enter to continue...";
+		cin.get();
+	}
+
+	static void _ClearScreen()
+	{
+		std::cout << "\033[2J\033[1;1H";
 	}
 };
 
