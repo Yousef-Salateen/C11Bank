@@ -77,4 +77,5 @@ public:
 		_Password = Password;
 	}
 
+	friend class clsUsersData;
 };
