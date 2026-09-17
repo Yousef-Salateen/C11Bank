@@ -65,5 +65,8 @@
     <ClInclude Include="Data Layer\clsUsersData.h">
       <Filter>Header Files\Data Layer</Filter>
     </ClInclude>
+    <ClInclude Include="External Libs\clsFiles.h">
+      <Filter>External Headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

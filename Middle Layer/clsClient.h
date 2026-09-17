@@ -25,6 +25,11 @@ private:
 		_MarkedForDelete = MarkedForDelete;
 	}
 
+	static clsClient _EmptyObject()
+	{
+		return clsClient("", "", "", "", "", "", 0.0, enMode::_EmptyMode);
+	}
+
 public:
 	clsClient(const std::string& FirstName, const std::string& LastName, const std::string& Email, const std::string& Phone,
 		const std::string& AccNumber, const std::string& PinCode, double Balance, enMode Mode)
@@ -47,7 +52,7 @@ public:
 	{
 		return _Balance;
 	}
-
+	
 	bool IsEmpty() const
 	{
 		return _Mode == enMode::_EmptyMode;
@@ -73,4 +78,5 @@ public:
 		_Balance = Balance;
 	}
 
+	friend class clsClientsData;
 };
