@@ -21,7 +21,7 @@ public:
 		return vData;
 	}
 
-	static std::vector<std::string> SeperateLineData(const std::string& Line, const std::string& Seperator = "#//#")
+	static std::vector<std::string> SeperateLineData(const std::string& Line, const std::string& Seperator)
 	{
 		std::vector<std::string> vData = clsString::Split(Line, Seperator);
 		return vData;
