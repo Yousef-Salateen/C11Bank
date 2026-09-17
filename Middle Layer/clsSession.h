@@ -1,6 +1,7 @@
 #pragma once
 
-class clsScreen
+class clsSession
 {
+
 };
 
