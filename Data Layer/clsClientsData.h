@@ -73,4 +73,6 @@ public:
 		clsFiles::SaveDataToFile(File, vData);
 		File.close();
 	}
+
+	friend class clsData;
 };
