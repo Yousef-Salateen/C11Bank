@@ -111,7 +111,11 @@ public:
 
 		case clsUser::enMode::_UpdateMode:
 			clsUser* ptrUser = _Find(User.Username());
-			_UpdateUser(ptrUser, User);
+			if(ptrUser)
+				_UpdateUser(ptrUser, User);
+			else
+				return clsManager::enSaveResult::eFailedEmptyObject;
+
 			break;
 		}
 
