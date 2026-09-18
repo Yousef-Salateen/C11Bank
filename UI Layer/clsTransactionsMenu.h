@@ -5,6 +5,7 @@
 #include "../External Libs/clsInputValidate.h"
 #include <iostream>
 #include "clsDepositScreen.h"
+#include "clsWithdrawScreen.h"
 
 class clsTransactionsMenu :
     protected clsScreen
@@ -59,7 +60,7 @@ private:
 	static void _ShowWithdrawScreen()
 	{
 		_ClearScreen();
-		//clsWithdrawScreen::Withdraw();
+		clsWithdrawScreen::Withdraw();
 	}
 
 	static void _ShowTotalBalanceScreen()
@@ -78,7 +79,10 @@ public:
 	static void ShowTransactionScreen()
 	{
 		if (_AccessMessage(clsSession::CurrentUser.HasPermission(enPermissions::eTransactions)))
+		{
+			_WaitForEnter();
 			return;
+		}
 
 		enTransactionMenuOptions MainMenuOption;
 		do
