@@ -4,7 +4,7 @@
 #include "../Middle Layer/clsClient.h"
 #include "../Global.h"
 #include "../External Libs/clsInputValidate.h"
-#include <iostream>"
+#include <iostream>
 
 class clsWithdrawScreen :
     protected clsScreen

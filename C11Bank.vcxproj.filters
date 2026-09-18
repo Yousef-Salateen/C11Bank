@@ -25,6 +25,15 @@
     <Filter Include="Header Files\Data Layer">
       <UniqueIdentifier>{8857f0aa-d2e6-46d8-85ab-48d20a3dc72d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\UI Layer\Transactions Screens">
+      <UniqueIdentifier>{c609e8bb-294d-469a-9657-91c08769084a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI Layer\User Screens">
+      <UniqueIdentifier>{59cf673c-ca5e-4ffa-8ee3-f4b002ace35b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI Layer\Client Screens">
+      <UniqueIdentifier>{a55f2776-c038-471e-ab7d-fb21e90e3bb3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C11Bank.cpp">
@@ -71,14 +80,8 @@
     <ClInclude Include="Global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UI Layer\clsAddNewClientScreen.h">
-      <Filter>Header Files\UI Layer</Filter>
-    </ClInclude>
     <ClInclude Include="Middle Layer\clsClientManager.h">
       <Filter>Header Files\Middle Layer</Filter>
-    </ClInclude>
-    <ClInclude Include="UI Layer\clsListClientsScreen.h">
-      <Filter>Header Files\UI Layer</Filter>
     </ClInclude>
     <ClInclude Include="UI Layer\clsLoginScreen.h">
       <Filter>Header Files\UI Layer</Filter>
@@ -98,47 +101,56 @@
     <ClInclude Include="Middle Layer\clsUserManager.h">
       <Filter>Header Files\Middle Layer</Filter>
     </ClInclude>
-    <ClInclude Include="UI Layer\clsDeleteClientScreen.h">
-      <Filter>Header Files\UI Layer</Filter>
-    </ClInclude>
-    <ClInclude Include="UI Layer\clsUpdateClientScreen.h">
-      <Filter>Header Files\UI Layer</Filter>
-    </ClInclude>
-    <ClInclude Include="UI Layer\clsFindClientScreen.h">
-      <Filter>Header Files\UI Layer</Filter>
-    </ClInclude>
-    <ClInclude Include="UI Layer\clsTransactionsMenu.h">
-      <Filter>Header Files\UI Layer</Filter>
-    </ClInclude>
-    <ClInclude Include="UI Layer\clsDepositScreen.h">
-      <Filter>Header Files\UI Layer</Filter>
-    </ClInclude>
-    <ClInclude Include="UI Layer\clsWithdrawScreen.h">
-      <Filter>Header Files\UI Layer</Filter>
-    </ClInclude>
-    <ClInclude Include="UI Layer\clsTotalBalanceScreen.h">
-      <Filter>Header Files\UI Layer</Filter>
-    </ClInclude>
-    <ClInclude Include="UI Layer\clsManagUsersScreen.h">
-      <Filter>Header Files\UI Layer</Filter>
-    </ClInclude>
-    <ClInclude Include="UI Layer\clsListUsersScreen.h">
-      <Filter>Header Files\UI Layer</Filter>
-    </ClInclude>
-    <ClInclude Include="UI Layer\clsAddNewUserScreen.h">
-      <Filter>Header Files\UI Layer</Filter>
-    </ClInclude>
-    <ClInclude Include="UI Layer\clsDeleteUserScreen.h">
-      <Filter>Header Files\UI Layer</Filter>
-    </ClInclude>
-    <ClInclude Include="UI Layer\clsUpdateUserScreen.h">
-      <Filter>Header Files\UI Layer</Filter>
-    </ClInclude>
-    <ClInclude Include="UI Layer\clsFindUserScreen.h">
-      <Filter>Header Files\UI Layer</Filter>
-    </ClInclude>
     <ClInclude Include="Data Layer\clsClassData.h">
       <Filter>Header Files\Data Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsAddNewClientScreen.h">
+      <Filter>Header Files\UI Layer\Client Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsAddNewUserScreen.h">
+      <Filter>Header Files\UI Layer\User Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsDeleteClientScreen.h">
+      <Filter>Header Files\UI Layer\Client Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsDeleteUserScreen.h">
+      <Filter>Header Files\UI Layer\User Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsDepositScreen.h">
+      <Filter>Header Files\UI Layer\Transactions Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsFindClientScreen.h">
+      <Filter>Header Files\UI Layer\Client Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsFindUserScreen.h">
+      <Filter>Header Files\UI Layer\User Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsListClientsScreen.h">
+      <Filter>Header Files\UI Layer\Client Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsListUsersScreen.h">
+      <Filter>Header Files\UI Layer\User Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsManagUsersScreen.h">
+      <Filter>Header Files\UI Layer\User Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsTotalBalanceScreen.h">
+      <Filter>Header Files\UI Layer\Transactions Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsWithdrawScreen.h">
+      <Filter>Header Files\UI Layer\Transactions Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsUpdateUserScreen.h">
+      <Filter>Header Files\UI Layer\User Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsUpdateClientScreen.h">
+      <Filter>Header Files\UI Layer\Client Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsTransactionsMenu.h">
+      <Filter>Header Files\UI Layer\Transactions Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="UI Layer\clsClientScreen.h">
+      <Filter>Header Files\UI Layer\Client Screens</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

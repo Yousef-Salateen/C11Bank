@@ -1,23 +1,13 @@
 #pragma once
 
-#include "clsScreen.h"
+#include "clsClientScreen.h"
 #include "../Global.h"
+#include "clsClientScreen.h"
 
 class clsListClientsScreen
-	: protected clsScreen
+	: protected clsClientScreen
 {
-private:
-	static void _PrintClientLine(const clsClient& Client)
-	{
-		std::cout << "|" << std::left << std::setw(15) << Client.AccNumber();
-		std::cout << "|" << std::left << std::setw(40) << Client.FullName();
-		std::cout << "|" << std::left << std::setw(10) << Client.PinCode();
-		std::cout << "|" << std::left << std::setw(15) << Client.Phone();
-		std::cout << "|" << std::left << std::setw(10) << Client.Balance() << std::endl;
-	}
-
 public:
-
 	static void PrintClientList()
 	{
 		if (_AccessMessage(clsSession::CurrentUser.HasPermission( enPermissions::eListClients)))
