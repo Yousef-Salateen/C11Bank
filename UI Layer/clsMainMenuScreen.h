@@ -6,6 +6,7 @@
 #include "../External Libs/clsInputValidate.h"
 #include "clsListClientsScreen.h"
 #include "clsAddNewClientScreen.h"
+#include "clsDeleteClientScreen.h"
 
 class clsMainMenuScreen :
     protected clsScreen
@@ -88,7 +89,7 @@ private:
 	static void _ShowDeleteClientScreen()
 	{
 		_ClearScreen();
-		std::cout << "List will be done here.";
+		clsDeleteClientScreen::DeleteClient();
 	}
 
 	static void _ShowUpdateClientScreen()

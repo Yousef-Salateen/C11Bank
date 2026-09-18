@@ -127,6 +127,7 @@ public:
 		if (User)
 		{
 			_DeleteUser(User);
+			Save();
 			return true;
 		}
 		else

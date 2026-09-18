@@ -151,6 +151,7 @@ public:
 		if (Client)
 		{
 			_DeleteClient(Client);
+			Save();
 			return true;
 		}
 		else
