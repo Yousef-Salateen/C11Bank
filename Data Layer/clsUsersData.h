@@ -23,7 +23,7 @@ public:
 
 		if (vUserData.empty())
 		{
-			return clsUser::_EmptyObject();
+			return clsUser::EmptyObject();
 		}
 
 		return clsUser(vUserData.at(enInfoPos::_FirstName), vUserData.at(enInfoPos::_LastName), vUserData.at(enInfoPos::_Email),

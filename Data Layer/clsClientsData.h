@@ -24,7 +24,7 @@ public:
 
 		if (vClientData.empty())
 		{
-			return clsClient::_EmptyObject();
+			return clsClient::EmptyObject();
 		}
 
 		return clsClient(vClientData.at(enInfoPos::_FirstName), vClientData.at(enInfoPos::_LastName), vClientData.at(enInfoPos::_Email),

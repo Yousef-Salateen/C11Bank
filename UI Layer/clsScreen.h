@@ -20,11 +20,11 @@ protected:
 	static bool _AccessMessage(bool HasAccess)
 	{
 		if (HasAccess)
-			return true;
+			return false;
 		else
 		{
 			_DrawScreenHeader("You don't have access to this. Contact your admin");
-			return false;
+			return true;
 		}
 	}
 

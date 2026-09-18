@@ -21,7 +21,7 @@ public:
 
 	static void PrintClientList()
 	{
-		if (!_AccessMessage(clsSession::CurrentUser.HasPermission( enPermissions::eListClients)))
+		if (_AccessMessage(clsSession::CurrentUser.HasPermission( enPermissions::eListClients)))
 			return;
 
 
@@ -39,7 +39,7 @@ public:
 		if (Clients.Amount())
 			for (size_t i = 0; i < Clients.Amount(); i++)
 			{
-				_PrintClientLine(Clients.Client(i));
+				_PrintClientLine(Clients.Item(i));
 			}
 		else
 			std::cout << "No clients are found\n";

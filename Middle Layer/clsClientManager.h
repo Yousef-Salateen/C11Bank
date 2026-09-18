@@ -5,15 +5,15 @@
 #include "clsClient.h"
 #include "../Data Layer/clsData.h"
 
-class clsClientManager : protected clsManager
+class clsClientManager 
+	: public clsManager<clsClient>
 {
 private:
-	std::vector<clsClient*> _vClients;
     double TotalBalance = 0.0;
-
+	
 	clsClient* _Find(const std::string& AccNumber) const
 	{
-		for (const clsClient* Client : _vClients)
+		for (const clsClient* Client : _vItems)
 		{
 			if (Client->AccNumber() == AccNumber)
 			{
@@ -26,7 +26,7 @@ private:
 
 	clsClient* _Find(const std::string& AccNumber, const std::string& PinCode) const
 	{
-		for (const clsClient* Client : _vClients)
+		for (const clsClient* Client : _vItems)
 		{
 			if (Client->AccNumber() == AccNumber && Client->PinCode() == PinCode)
 			{
@@ -38,7 +38,7 @@ private:
 
 	void _AddClient(clsClient* Client)
 	{
-		_vClients.emplace_back(Client);
+		_vItems.emplace_back(Client);
 		TotalBalance += Client->Balance();
 	}
 
@@ -49,19 +49,6 @@ private:
 		TotalBalance += Client->Balance();
 	}
 
-	size_t _PtrIndex(clsClient* ptr)
-	{
-		for (size_t i = 0; i < _vClients.size(); i++)
-		{
-			if (_vClients[i] == ptr)
-			{
-				return i;
-			}
-		}
-
-		return -1;
-	}
-
 	void _DeleteClient(clsClient* Client)
 	{
 		size_t index = _PtrIndex(Client);
@@ -69,7 +56,7 @@ private:
 		{
 			TotalBalance -= Client->Balance();
 			delete Client;
-			_vClients.erase(_vClients.begin() + index);
+			_vItems.erase(_vItems.begin() + index);
 		}
 	}
 
@@ -92,9 +79,9 @@ private:
 	}
 
 public:
-	clsClientManager() : _vClients(clsData::LoadClients())
+	clsClientManager() : clsManager(clsData::LoadClients)
 	{
-		for (const clsClient* Client : _vClients)
+		for (const clsClient* Client : _vItems)
 		{
 			TotalBalance += Client->Balance();
 		}
@@ -103,15 +90,10 @@ public:
 	~clsClientManager()
 	{
 		Save();
-		for (clsClient* Client : _vClients)
+		for (clsClient* Client : _vItems)
 		{
 			delete Client;
 		}
-	}
-
-	void Save() const
-	{
-		clsData::Save(_vClients);
 	}
 
 	bool IsClientExist(const std::string& AccNumber) const
@@ -123,14 +105,14 @@ public:
 	{
 		clsClient* Client = _Find(AccNumber);
 
-		return Client ? *Client : clsClient::_EmptyObject();
+		return Client ? *Client : clsClient::EmptyObject();
 	}
 
 	clsClient Find(const std::string& AccNumber, const std::string& PinCode) const
 	{
 		clsClient* Client = _Find(AccNumber, PinCode);
 
-		return Client ? *Client : clsClient::_EmptyObject();
+		return Client ? *Client : clsClient::EmptyObject();
 	}
 
 	enSaveResult SaveClient(const clsClient& Client)
@@ -186,13 +168,6 @@ public:
 		return TotalBalance;
 	}
 
-	clsClient Client(size_t index)
-	{
-		if (index >= 0 && index < _vClients.size())
-			return *_vClients[index];
-		return clsClient::_EmptyObject();
-	}
-
 	void DepositTo(double Amount, const std::string& AccNumber)
 	{
 		clsClient* Client = _Find(AccNumber);
@@ -203,11 +178,6 @@ public:
 	{
 		clsClient* Client = _Find(AccNumber);
 		return _Withdraw(Amount, Client);
-	}
-
-	size_t Amount()
-	{
-		return _vClients.size();
 	}
 
 };

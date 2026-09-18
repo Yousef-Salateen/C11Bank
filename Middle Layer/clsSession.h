@@ -6,7 +6,7 @@
 class clsSession
 {
 public:
-	inline static clsUser CurrentUser = (clsUser::_EmptyObject());
+	inline static clsUser CurrentUser = (clsUser::EmptyObject());
 	
 	clsSession(const std::string& Username, const std::string& Password)
 	{

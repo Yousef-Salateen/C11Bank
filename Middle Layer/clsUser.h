@@ -29,17 +29,17 @@ private:
 		_MarkedForDelete = MarkedForDelete;
 	}
 
-	static clsUser _EmptyObject()
-	{
-		return clsUser("", "", "", "", "", "", 0, enMode::_EmptyMode);
-	}
-
 public:
 	clsUser(const std::string& FirstName, const std::string& LastName, const std::string& Email, const std::string& Phone,
 		const std::string& Username, const std::string& Password, int Permissions, enMode Mode)
 		: clsPerson(FirstName, LastName, Email, Phone, Mode), _Username(Username), _Password(Password), _Permissions(Permissions)
 	{
 
+	}
+
+	static clsUser EmptyObject()
+	{
+		return clsUser("", "", "", "", "", "", 0, enMode::_EmptyMode);
 	}
 
 	std::string Username() const
@@ -84,5 +84,6 @@ public:
 
 	friend class clsUsersData;
 	friend class clsUserManager;
+	//friend class clsManager<clsUser>;
 	friend class clsSession;
 };
