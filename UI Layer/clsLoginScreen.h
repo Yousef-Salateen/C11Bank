@@ -4,6 +4,7 @@
 #include "../Middle Layer/clsSession.h"
 #include "../External Libs/clsInputValidate.h"
 #include "clsMainMenuScreen.h"
+#include "../Global.h"
 
 class clsLoginScreen :
     protected clsScreen
@@ -11,17 +12,18 @@ class clsLoginScreen :
 private:
     static void _Login()
     {
+		clsSession Session;
+
 		std::string Username = clsInputValidate::Read<std::string>("Please Enter Your Username: ");
 		std::string Password = clsInputValidate::Read<std::string>("Please Enter Your Password: ");
 
-		clsSession Session(Username, Password);
-
+		Session.CurrentUser = Users.Find(Username, Password);
 		while (Session.CurrentUser.IsEmpty())
 		{
 			std::cout << "\nInvalid Username or Password, please try again.\n";
 			Username = clsInputValidate::Read<std::string>("Please Enter Your Username: ");
 			Password = clsInputValidate::Read<std::string>("Please Enter Your Password: ");
-			Session = clsSession(Username, Password);
+			Session.CurrentUser = Users.Find(Username, Password);
 		}
 
 		clsMainMenuScreen::ShowMainMenuScreen();
