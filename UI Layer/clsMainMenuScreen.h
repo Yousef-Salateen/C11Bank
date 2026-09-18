@@ -7,6 +7,7 @@
 #include "clsListClientsScreen.h"
 #include "clsAddNewClientScreen.h"
 #include "clsDeleteClientScreen.h"
+#include "clsUpdateClientScreen.h"
 
 class clsMainMenuScreen :
     protected clsScreen
@@ -95,7 +96,7 @@ private:
 	static void _ShowUpdateClientScreen()
 	{
 		_ClearScreen();
-		std::cout << "List will be done here.";
+		clsUpdateClientScreen::UpdateClient();
 	}
 
 	static void _ShowFindClientScreen()

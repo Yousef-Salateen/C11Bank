@@ -101,5 +101,8 @@
     <ClInclude Include="UI Layer\clsDeleteClientScreen.h">
       <Filter>Header Files\UI Layer</Filter>
     </ClInclude>
+    <ClInclude Include="UI Layer\clsUpdateClientScreen.h">
+      <Filter>Header Files\UI Layer</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
