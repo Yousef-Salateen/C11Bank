@@ -9,12 +9,24 @@ private:
 	std::string _LastName;
 	std::string _Email;
 	std::string _Phone;
-	bool _MarkedForDelete = false;
 
 protected:
 	enum enMode : char { _EmptyMode = 0, _UpdateMode, _AddNewMode };
 
 	enMode _Mode;
+
+	bool _MarkedForDelete = false;
+
+	void _setMode(enMode Mode)
+	{
+		_Mode = Mode;
+	}
+
+	void _setMarkedForDelete(bool MarkedForDelete)
+	{
+		_MarkedForDelete = MarkedForDelete;
+	}
+
 public:
 	clsPerson(const std::string& FirstName, const std::string& LastName, const std::string& Email, const std::string& Phone, enMode Mode = enMode::_EmptyMode) :
 		_FirstName(FirstName), _LastName(LastName), _Email(Email), _Phone(Phone), _Mode(Mode)

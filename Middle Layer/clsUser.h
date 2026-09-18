@@ -13,11 +13,6 @@ private:
 	std::string _Password;
 	int _Permissions = 0;
 
-	void _setMode(enMode Mode)
-	{
-		_Mode = Mode;
-	}
-
 public:
 	clsUser(const std::string& FirstName, const std::string& LastName, const std::string& Email, const std::string& Phone,
 		const std::string& Username, const std::string& Password, int Permissions, enMode Mode)

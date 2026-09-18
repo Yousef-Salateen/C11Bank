@@ -11,11 +11,6 @@ private:
 	std::string _PinCode;
 	double _Balance = 0.0;
 
-	void _setMode(enMode Mode)
-	{
-		_Mode = Mode;
-	}
-
 public:
 	clsClient(const std::string& FirstName, const std::string& LastName, const std::string& Email, const std::string& Phone,
 		const std::string& AccNumber, const std::string& PinCode, double Balance, enMode Mode)
