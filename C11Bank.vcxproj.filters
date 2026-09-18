@@ -116,5 +116,8 @@
     <ClInclude Include="UI Layer\clsWithdrawScreen.h">
       <Filter>Header Files\UI Layer</Filter>
     </ClInclude>
+    <ClInclude Include="UI Layer\clsTotalBalanceScreen.h">
+      <Filter>Header Files\UI Layer</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
