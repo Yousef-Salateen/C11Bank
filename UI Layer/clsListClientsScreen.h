@@ -2,7 +2,6 @@
 
 #include "clsClientScreen.h"
 #include "../Global.h"
-#include "clsClientScreen.h"
 
 class clsListClientsScreen
 	: protected clsClientScreen

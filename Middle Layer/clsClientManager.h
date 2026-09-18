@@ -190,7 +190,7 @@ public:
 	bool WithdrawFrom(double Amount, const std::string& AccNumber)
 	{
 		clsClient* Client = _Find(AccNumber);
-		bool IsSuccessful = _Withdraw(Amount, Client);
+		bool IsSuccessful = Client ? _Withdraw(Amount, Client) : false;
 
 		if (IsSuccessful)
 		{
