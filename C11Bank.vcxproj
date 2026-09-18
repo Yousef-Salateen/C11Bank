@@ -142,17 +142,44 @@
     <ClCompile Include="C11Bank.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Data Layer\clsClassData.h" />
     <ClInclude Include="Data Layer\clsClientsData.h" />
     <ClInclude Include="Data Layer\clsData.h" />
     <ClInclude Include="Data Layer\clsUsersData.h" />
     <ClInclude Include="External Libs\clsDate.h" />
+    <ClInclude Include="External Libs\clsFiles.h" />
     <ClInclude Include="External Libs\clsInputValidate.h" />
     <ClInclude Include="External Libs\clsPeriod.h" />
     <ClInclude Include="External Libs\clsString.h" />
     <ClInclude Include="External Libs\clsUtility.h" />
+    <ClInclude Include="Global.h" />
     <ClInclude Include="Middle Layer\clsClient.h" />
+    <ClInclude Include="Middle Layer\clsClientManager.h" />
+    <ClInclude Include="Middle Layer\clsManager.h" />
     <ClInclude Include="Middle Layer\clsPerson.h" />
+    <ClInclude Include="Middle Layer\clsSession.h" />
     <ClInclude Include="Middle Layer\clsUser.h" />
+    <ClInclude Include="Middle Layer\clsUserManager.h" />
+    <ClInclude Include="UI Layer\clsAddNewClientScreen.h" />
+    <ClInclude Include="UI Layer\clsAddNewUserScreen.h" />
+    <ClInclude Include="UI Layer\clsClientScreen.h" />
+    <ClInclude Include="UI Layer\clsDeleteClientScreen.h" />
+    <ClInclude Include="UI Layer\clsDeleteUserScreen.h" />
+    <ClInclude Include="UI Layer\clsDepositScreen.h" />
+    <ClInclude Include="UI Layer\clsFindClientScreen.h" />
+    <ClInclude Include="UI Layer\clsFindUserScreen.h" />
+    <ClInclude Include="UI Layer\clsListClientsScreen.h" />
+    <ClInclude Include="UI Layer\clsListUsersScreen.h" />
+    <ClInclude Include="UI Layer\clsLoginScreen.h" />
+    <ClInclude Include="UI Layer\clsMainMenuScreen.h" />
+    <ClInclude Include="UI Layer\clsManagUsersScreen.h" />
+    <ClInclude Include="UI Layer\clsScreen.h" />
+    <ClInclude Include="UI Layer\clsTotalBalanceScreen.h" />
+    <ClInclude Include="UI Layer\clsTransactionsMenu.h" />
+    <ClInclude Include="UI Layer\clsUpdateClientScreen.h" />
+    <ClInclude Include="UI Layer\clsUpdateUserScreen.h" />
+    <ClInclude Include="UI Layer\clsUserScreen.h" />
+    <ClInclude Include="UI Layer\clsWithdrawScreen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

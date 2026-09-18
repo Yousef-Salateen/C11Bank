@@ -1,8 +1,10 @@
 #include <iostream>
-
-using namespace std;
+#include "UI Layer/clsLoginScreen.h"
+#include "Global.h"
+#include "Middle Layer/clsUser.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	while(true)
+		clsLoginScreen::Login();
 }
