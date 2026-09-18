@@ -1,22 +1,12 @@
 #pragma once
 
-#include "clsScreen.h"
+#include "clsUserScreen.h"
 #include "../Middle Layer/clsUser.h"
 #include "../Global.h"
 
 class clsListUsersScreen :
-    protected clsScreen
+    protected clsUserScreen
 {
-private:
-	static void _PrintUserLine(const clsUser& User)
-	{
-		std::cout << "|" << std::left << std::setw(15) << User.Username();
-		std::cout << "|" << std::left << std::setw(40) << User.FullName();
-		std::cout << "|" << std::left << std::setw(10) << User.Password();
-		std::cout << "|" << std::left << std::setw(15) << User.Phone();
-		std::cout << "|" << std::left << std::setw(10) << User.Permissions() << std::endl;
-	}
-
 public:
 
 	static void PrintUserList()

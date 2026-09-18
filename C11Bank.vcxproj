@@ -178,6 +178,7 @@
     <ClInclude Include="UI Layer\clsTransactionsMenu.h" />
     <ClInclude Include="UI Layer\clsUpdateClientScreen.h" />
     <ClInclude Include="UI Layer\clsUpdateUserScreen.h" />
+    <ClInclude Include="UI Layer\clsUserScreen.h" />
     <ClInclude Include="UI Layer\clsWithdrawScreen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

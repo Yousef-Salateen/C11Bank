@@ -1,28 +1,12 @@
 #pragma once
 
-#include "clsScreen.h"
+#include "clsUserScreen.h"
 #include "../Global.h"
 #include "../External Libs/clsInputValidate.h"
 
 class clsFindUserScreen :
-    protected clsScreen
+    protected clsUserScreen
 {
-private:
-	static void _PrintUser(const clsUser& User)
-	{
-		std::cout << "\nUser Card:";
-		std::cout << "\n_________________";
-		std::cout << "\nFirst Name: " << User.FirstName();
-		std::cout << "\nLast Name: " << User.LastName();
-		std::cout << "\nFull Name: " << User.FullName();
-		std::cout << "\nEmail: " << User.Email();
-		std::cout << "\nPhone: " << User.Phone();
-		std::cout << "\nUsername: " << User.Username();
-		std::cout << "\nPassword: " << User.Password();
-		std::cout << "\nPermissions: " << User.Permissions();
-		std::cout << "\n_________________" << std::endl;
-	}
-
 public:
 	static void FindUser()
 	{
