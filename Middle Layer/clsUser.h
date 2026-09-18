@@ -12,16 +12,10 @@ private:
 	std::string _Username;
 	std::string _Password;
 	int _Permissions = 0;
-	bool _MarkedForDelete = false;
 
 	void _setMode(enMode Mode)
 	{
 		_Mode = Mode;
-	}
-
-	void _setMarkedForDelete(bool MarkedForDelete)
-	{
-		_MarkedForDelete = MarkedForDelete;
 	}
 
 public:
@@ -55,11 +49,6 @@ public:
 	bool IsEmpty() const
 	{
 		return _Mode == enMode::_EmptyMode;
-	}
-
-	bool MarkedForDelete() const
-	{
-		return _MarkedForDelete;
 	}
 
 	void setUsername(const std::string& Username)

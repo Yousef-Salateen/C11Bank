@@ -10,16 +10,10 @@ private:
 	std::string _AccNumber;
 	std::string _PinCode;
 	double _Balance = 0.0;
-	bool _MarkedForDelete = false;
 
 	void _setMode(enMode Mode)
 	{
 		_Mode = Mode;
-	}
-
-	void _setMarkedForDelete(bool MarkedForDelete)
-	{
-		_MarkedForDelete = MarkedForDelete;
 	}
 
 public:
@@ -53,11 +47,6 @@ public:
 	bool IsEmpty() const
 	{
 		return _Mode == enMode::_EmptyMode;
-	}
-
-	bool MarkedForDelete() const
-	{
-		return _MarkedForDelete;
 	}
 
 	void setAccNumber(const std::string& AccNumber)

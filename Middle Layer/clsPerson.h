@@ -9,6 +9,7 @@ private:
 	std::string _LastName;
 	std::string _Email;
 	std::string _Phone;
+	bool _MarkedForDelete = false;
 
 protected:
 	enum enMode : char { _EmptyMode = 0, _UpdateMode, _AddNewMode };
@@ -46,6 +47,11 @@ public:
 	std::string Phone() const
 	{ 
 		return _Phone;
+	}
+
+	bool MarkedForDelete() const
+	{
+		return _MarkedForDelete;
 	}
 
 	void setFirstName(const std::string& FirstName)
