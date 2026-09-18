@@ -149,7 +149,7 @@ public:
 	bool HasPermission(const std::string& Username, enPermissions Permission)
 	{
 		clsUser* User = _Find(Username);
-		return User->HasPermission(Permission);
+		return User ? User->HasPermission(Permission) : false;
 	}
 };
 
