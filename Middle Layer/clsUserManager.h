@@ -97,7 +97,8 @@ public:
 		{
 			return clsManager::enSaveResult::eFailedEmptyObject;
 		}
-		if (IsUserExist(User.Username()))
+		if (User._Mode != clsUser::enMode::_UpdateMode 
+			&& IsUserExist(User.Username()))
 		{
 			return clsManager::enSaveResult::eFailedExistingUsername;
 		}

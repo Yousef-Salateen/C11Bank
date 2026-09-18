@@ -121,7 +121,8 @@ public:
 		{
 			return clsManager::enSaveResult::eFailedEmptyObject;
 		}
-		if (IsClientExist(Client.AccNumber()))
+		if (Client._Mode != clsClient::enMode::_UpdateMode 
+			&& IsClientExist(Client.AccNumber()))
 		{
 			return clsManager::enSaveResult::eFailedExistingAccNumber;
 		}
