@@ -9,6 +9,7 @@
 #include "clsAddNewUserscreen.h"
 #include "clsDeleteUserScreen.h"
 #include "clsUpdateUserScreen.h"
+#include "clsFindUserScreen.h"
 
 class clsManagUsersScreen :
     protected clsScreen
@@ -91,7 +92,7 @@ private:
 	static void _ShowFindUserScreen()
 	{
 		_ClearScreen();
-		//clsFindUserScreen::FindUser();
+		clsFindUserScreen::FindUser();
 	}
 
 	static void _ShowExitScreen()

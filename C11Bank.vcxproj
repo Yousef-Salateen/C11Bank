@@ -165,6 +165,7 @@
     <ClInclude Include="UI Layer\clsDeleteUserScreen.h" />
     <ClInclude Include="UI Layer\clsDepositScreen.h" />
     <ClInclude Include="UI Layer\clsFindClientScreen.h" />
+    <ClInclude Include="UI Layer\clsFindUserScreen.h" />
     <ClInclude Include="UI Layer\clsListClientsScreen.h" />
     <ClInclude Include="UI Layer\clsListUsersScreen.h" />
     <ClInclude Include="UI Layer\clsLoginScreen.h" />
