@@ -9,13 +9,30 @@ class clsUserScreen :
     protected clsScreen
 {
 protected:
-	static void _PrintUserLine(const clsUser& User)
+    enum enDisplayInfo { eAll = 1, ePassword, ePhone, ePernissions };
+
+	static void _PrintUserLine(const clsUser& User, enDisplayInfo ToDisplay = enDisplayInfo::eAll)
 	{
 		std::cout << "|" << std::left << std::setw(15) << User.Username();
 		std::cout << "|" << std::left << std::setw(40) << User.FullName();
-		std::cout << "|" << std::left << std::setw(10) << User.Password();
-		std::cout << "|" << std::left << std::setw(15) << User.Phone();
-		std::cout << "|" << std::left << std::setw(10) << User.Permissions() << std::endl;
+
+        switch (ToDisplay)
+        {
+        case enDisplayInfo::eAll:
+        case enDisplayInfo::ePassword:
+            std::cout << "|" << std::left << std::setw(10) << User.Password();
+            if (ToDisplay != enDisplayInfo::eAll) break;
+
+        case enDisplayInfo::ePhone:
+            std::cout << "|" << std::left << std::setw(15) << User.Phone();
+            if (ToDisplay != enDisplayInfo::eAll) break;
+
+        case enDisplayInfo::ePernissions:
+            std::cout << "|" << std::left << std::setw(10) << User.Permissions();
+            if (ToDisplay != enDisplayInfo::eAll) break;
+        }
+
+        std::cout << std::endl;
 	}
 
 	static void _PrintUser(const clsUser& User)

@@ -1,21 +1,13 @@
 #pragma once
 
-#include "clsScreen.h"
+#include "clsClientScreen.h"
 #include "../Global.h"
 #include "../Middle Layer/clsClient.h"
 #include "../External Libs/clsUtility.h"
 
 class clsTotalBalanceScreen :
-    protected clsScreen
+    protected clsClientScreen
 {
-private:
-	static void _PrintClientBalanceLine(const clsClient& Client)
-	{
-		std::cout << "|" << std::left << std::setw(15) << Client.AccNumber();
-		std::cout << "|" << std::left << std::setw(40) << Client.FullName();
-		std::cout << "|" << std::left << std::setw(10) << Client.Balance() << std::endl;
-	}
-
 public:
 	static void PrintClientList()
 	{
@@ -33,7 +25,7 @@ public:
 		if (Clients.Amount())
 			for (size_t i = 0; i < Clients.Amount(); i++)
 			{
-				_PrintClientBalanceLine(Clients.Item(i));
+				_PrintClientLine(Clients.Item(i), enDisplayInfo::eBalance);
 			}
 		else
 			std::cout << "No clients are found\n";
