@@ -9,21 +9,21 @@ class clsData
 public:
 	static std::vector<clsClient*> LoadClients()
 	{
-		return clsClientsData::LoadClientsDataFromFile(clsClientsData::_ClientsFileName);
+		return clsClientsData::LoadDataFromFile(clsClientsData::_ClientsFileName);
 	}
 
 	static void Save(const std::vector<clsClient*>& vClients)
 	{
-		clsClientsData::SaveClientsDataToFile(clsClientsData::_ClientsFileName, vClients);
+		clsClientsData::SaveDataToFile(clsClientsData::_ClientsFileName, vClients);
 	}
 	
 	static std::vector<clsUser*> LoadUsers()
 	{
-		return clsUsersData::LoadUsersDataFromFile(clsUsersData::_UsersFileName);
+		return clsUsersData::LoadDataFromFile(clsUsersData::_UsersFileName);
 	}
 	
 	static void Save(const std::vector<clsUser*>& vUsers)
 	{
-		clsUsersData::SaveUsersDataToFile(clsUsersData::_UsersFileName, vUsers);
+		clsUsersData::SaveDataToFile(clsUsersData::_UsersFileName, vUsers);
 	}
 };

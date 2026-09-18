@@ -137,5 +137,8 @@
     <ClInclude Include="UI Layer\clsFindUserScreen.h">
       <Filter>Header Files\UI Layer</Filter>
     </ClInclude>
+    <ClInclude Include="Data Layer\clsClassData.h">
+      <Filter>Header Files\Data Layer</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

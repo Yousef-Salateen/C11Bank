@@ -4,12 +4,14 @@
 #include "../Middle Layer/clsClient.h"
 #include <fstream>
 #include <vector>
+#include "clsClassData.h"
 
 //This class responsible for loading and saving clients data to and from a file
 //This class is irresponsible for what happens to the data after it is loaded from the file, and what happens to the data before it is saved to the file
 //After data is loaded from the file, it is the responsibility of the caller to manage the data
 //and before saving the data to the file, it is the responsibility of the caller to prepare the data for saving
 class clsClientsData
+	: public clsClassData<clsClientsData, clsClient>
 {
 private:
 	inline static const std::string _ClientsFileName = "Clients.txt";
@@ -18,7 +20,7 @@ private:
 	enum enInfoPos : char { _FirstName = 0, _LastName, _Email, _Phone, _AccNumber, _PinCode, _Balance };
 public:
 
-	static clsClient ConvertLineToClient(const std::string& Line)
+	static clsClient ConvertLineToObject(const std::string& Line)
 	{
 		std::vector<std::string> vClientData = clsFiles::SeperateLineData(Line, _Seperator);
 
@@ -32,46 +34,10 @@ public:
 			std::stod(vClientData.at(enInfoPos::_Balance)), clsClient::enMode::_UpdateMode);
 	}
 
-	static std::vector<clsClient*> LoadClientsDataFromFile(const std::string& FileName)
+	static std::string ConvertObjectToLine(const clsClient* Object)
 	{
-		std::vector<clsClient*> vClients;
-		std::fstream File(FileName, std::ios::in);
-
-		std::vector<std::string> vData = clsFiles::LoadDataFromFile(File);
-		vClients.reserve(vData.size());
-
-		for (const std::string& Line : vData)
-		{
-				vClients.emplace_back(new clsClient(ConvertLineToClient(Line)));
-		}
-
-		File.close();
-
-		return vClients;
-	}
-
-	static std::string ConvertClientToLine(const clsClient* Client)
-	{
-		return Client->FirstName() + _Seperator + Client->LastName() + _Seperator + Client->Email() + _Seperator + Client->Phone() + _Seperator +
-			Client->AccNumber() + _Seperator + Client->PinCode() + _Seperator + std::to_string(Client->Balance());
-	}
-
-	static void SaveClientsDataToFile(const std::string& FileName, const std::vector<clsClient*>& vClients)
-	{
-		std::fstream File(FileName, std::ios::out);
-		std::vector <std::string> vData;
-		vData.reserve(vClients.size());
-
-		for (const clsClient* Client : vClients)
-		{
-			if (Client && !Client->MarkedForDelete())
-			{
-				vData.emplace_back(ConvertClientToLine(Client));
-			}
-		}
-
-		clsFiles::SaveDataToFile(File, vData);
-		File.close();
+		return Object->FirstName() + _Seperator + Object->LastName() + _Seperator + Object->Email() + _Seperator + Object->Phone() + _Seperator +
+			Object->AccNumber() + _Seperator + Object->PinCode() + _Seperator + std::to_string(Object->Balance());
 	}
 
 	friend class clsData;

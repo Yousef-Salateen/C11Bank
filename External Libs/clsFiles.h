@@ -4,6 +4,8 @@
 #include <fstream>
 #include <vector>
 
+//The class only validates if the file is open and does what it's supposed to do
+//The responsibilty lies in the user to open and close the file
 class clsFiles
 {
 public:
