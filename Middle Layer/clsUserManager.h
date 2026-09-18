@@ -111,7 +111,11 @@ public:
 
 		case clsUser::enMode::_UpdateMode:
 			clsUser* ptrUser = _Find(User.Username());
-			_UpdateUser(ptrUser, User);
+			if(ptrUser)
+				_UpdateUser(ptrUser, User);
+			else
+				return clsManager::enSaveResult::eFailedEmptyObject;
+
 			break;
 		}
 
@@ -127,6 +131,7 @@ public:
 		if (User)
 		{
 			_DeleteUser(User);
+			Save();
 			return true;
 		}
 		else
@@ -135,9 +140,9 @@ public:
 		}
 	}
 
-	clsUser AddNewObject()
+	clsUser AddNewObject(const std::string& Username)
 	{
-		return clsUser("", "", "", "", "", "", 0, clsPerson::enMode::_AddNewMode);
+		return clsUser("", "", "", "", Username, "", 0, clsPerson::enMode::_AddNewMode);
 	}
 
 	clsUser User(size_t index)

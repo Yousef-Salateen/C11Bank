@@ -151,6 +151,7 @@ public:
 		if (Client)
 		{
 			_DeleteClient(Client);
+			Save();
 			return true;
 		}
 		else
@@ -159,9 +160,9 @@ public:
 		}
 	}
 
-	clsClient AddNewObject()
+	clsClient AddNewObject(const std::string& AccNumber)
 	{
-		return clsClient("", "", "", "", "", "", 0.0, clsPerson::enMode::_AddNewMode);
+		return clsClient("", "", "", "", AccNumber, "", 0.0, clsPerson::enMode::_AddNewMode);
 	}
 
 	double GetTotalBalance() const
@@ -173,12 +174,23 @@ public:
 	{
 		clsClient* Client = _Find(AccNumber);
 		_Deposit(Amount, Client);
+		Save();
 	}
 
 	bool WithdrawFrom(double Amount, const std::string& AccNumber)
 	{
 		clsClient* Client = _Find(AccNumber);
-		return _Withdraw(Amount, Client);
+		bool IsSuccessful = _Withdraw(Amount, Client);
+
+		if (IsSuccessful)
+		{
+			Save();
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 };

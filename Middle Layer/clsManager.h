@@ -9,8 +9,6 @@ class clsManager
 protected:
 	std::vector<clsClass*> _vItems;
 
-	enum enSaveResult : char { eFailedEmptyObject = 0, eSucceeded, eFailedExistingAccNumber, eFailedExistingUsername };
-
 	size_t _PtrIndex(clsClass* Obj)
 	{
 		for (size_t i = 0; i < _vItems.size(); i++)
@@ -25,6 +23,7 @@ protected:
 	}
 
 public:
+	enum enSaveResult : char { eFailedEmptyObject = 0, eSucceeded, eFailedExistingAccNumber, eFailedExistingUsername };
 
 	clsManager(std::vector<clsClass*>(*Load)())
 		: _vItems(Load())

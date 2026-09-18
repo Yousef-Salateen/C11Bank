@@ -5,6 +5,12 @@
 #include <iomanip>
 #include "../External Libs/clsInputValidate.h"
 #include "clsListClientsScreen.h"
+#include "clsAddNewClientScreen.h"
+#include "clsDeleteClientScreen.h"
+#include "clsUpdateClientScreen.h"
+#include "clsFindClientScreen.h"
+#include "clsTransactionsMenu.h"
+#include "clsManagUsersScreen.h"
 
 class clsMainMenuScreen :
     protected clsScreen
@@ -81,43 +87,42 @@ private:
 	static void _ShowAddNewClientScreen()
 	{
 		_ClearScreen();
-		std::cout << "List will be done here.";
+		clsAddNewClientScreen::AddClient();
 	}
 
 	static void _ShowDeleteClientScreen()
 	{
 		_ClearScreen();
-		std::cout << "List will be done here.";
+		clsDeleteClientScreen::DeleteClient();
 	}
 
 	static void _ShowUpdateClientScreen()
 	{
 		_ClearScreen();
-		std::cout << "List will be done here.";
+		clsUpdateClientScreen::UpdateClient();
 	}
 
 	static void _ShowFindClientScreen()
 	{
 		_ClearScreen();
-		std::cout << "List will be done here.";
+		clsFindClientScreen::FindClient();
 	}
 
 	static void _ShowTransactionsScreen()
 	{
 		_ClearScreen();
-		std::cout << "List will be done here.";
+		clsTransactionsMenu::ShowTransactionScreen();
 	}
 
 	static void _ShowManageUsersScreen()
 	{
 		_ClearScreen();
-		std::cout << "List will be done here.";
+		clsManagUsersScreen::ShowManageUsersScreen();
 	}
 
 	static void _Logout()
 	{
 		_ClearScreen();
-		std::cout << "List will be done here.";
 	}
 
 public:
