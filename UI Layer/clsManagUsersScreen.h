@@ -5,6 +5,7 @@
 #include <iomanip>
 #include "../External Libs/clsInputValidate.h"
 #include "../Middle Layer/clsSession.h"
+#include "clsListUsersScreen.h"
 
 class clsManagUsersScreen :
     protected clsScreen
@@ -63,7 +64,7 @@ private:
 	static void _ShowUsersListScreen()
 	{
 		_ClearScreen();
-		//clsListUsersScreen::PrintUserList();
+		clsListUsersScreen::PrintUserList();
 	}
 
 	static void _ShowAddNewUserScreen()
