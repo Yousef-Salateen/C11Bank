@@ -52,7 +52,7 @@ private:
 	void _DeleteClient(clsClient* Client)
 	{
 		size_t index = _PtrIndex(Client);
-		if (index != -1)
+		if (index != std::string::npos)
 		{
 			TotalBalance -= Client->Balance();
 			delete Client;
@@ -135,7 +135,10 @@ public:
 
 		case clsClient::enMode::_UpdateMode:
 			clsClient* ptrClient = _Find(Client.AccNumber());
-			_UpdateClient(ptrClient, Client);
+			if(ptrClient)
+				_UpdateClient(ptrClient, Client);
+			else
+				return clsManager::enSaveResult::eFailedEmptyObject;
 			break;
 		}
 
@@ -173,8 +176,15 @@ public:
 	void DepositTo(double Amount, const std::string& AccNumber)
 	{
 		clsClient* Client = _Find(AccNumber);
-		_Deposit(Amount, Client);
-		Save();
+		if (Client)
+		{
+			_Deposit(Amount, Client);
+			Save();
+		}
+		else
+		{
+			return;
+		}
 	}
 
 	bool WithdrawFrom(double Amount, const std::string& AccNumber)

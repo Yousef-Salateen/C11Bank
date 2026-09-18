@@ -50,7 +50,7 @@ private:
 	void _DeleteUser(clsUser* User)
 	{
 		size_t index = _PtrIndex(User);
-		if (index != -1)
+		if (index != std::string::npos)
 		{
 			delete User;
 			_vItems.erase(_vItems.begin() + index);
