@@ -9,6 +9,7 @@
 #include "clsDeleteClientScreen.h"
 #include "clsUpdateClientScreen.h"
 #include "clsFindClientScreen.h"
+#include "clsTransactionsMenu.h"
 
 class clsMainMenuScreen :
     protected clsScreen
@@ -109,7 +110,7 @@ private:
 	static void _ShowTransactionsScreen()
 	{
 		_ClearScreen();
-		std::cout << "List will be done here.";
+		clsTransactionsMenu::ShowTransactionScreen();
 	}
 
 	static void _ShowManageUsersScreen()

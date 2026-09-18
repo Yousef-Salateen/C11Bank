@@ -174,12 +174,23 @@ public:
 	{
 		clsClient* Client = _Find(AccNumber);
 		_Deposit(Amount, Client);
+		Save();
 	}
 
 	bool WithdrawFrom(double Amount, const std::string& AccNumber)
 	{
 		clsClient* Client = _Find(AccNumber);
-		return _Withdraw(Amount, Client);
+		bool IsSuccessful = _Withdraw(Amount, Client);
+
+		if (IsSuccessful)
+		{
+			Save();
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 };

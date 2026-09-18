@@ -4,6 +4,7 @@
 #include "../Global.h"
 #include "../External Libs/clsInputValidate.h"
 #include <iostream>
+#include "clsDepositScreen.h"
 
 class clsTransactionsMenu :
     protected clsScreen
@@ -52,7 +53,7 @@ private:
 	static void _ShowDepositScreen()
 	{
 		_ClearScreen();
-		//clsDepositScreen::Deposit();
+		clsDepositScreen::Deposit();
 	}
 
 	static void _ShowWithdrawScreen()

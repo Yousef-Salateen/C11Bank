@@ -110,5 +110,8 @@
     <ClInclude Include="UI Layer\clsTransactionsMenu.h">
       <Filter>Header Files\UI Layer</Filter>
     </ClInclude>
+    <ClInclude Include="UI Layer\clsDepositScreen.h">
+      <Filter>Header Files\UI Layer</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
