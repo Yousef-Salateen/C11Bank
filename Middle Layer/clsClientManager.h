@@ -159,9 +159,9 @@ public:
 		}
 	}
 
-	clsClient AddNewObject()
+	clsClient AddNewObject(const std::string& AccNumber)
 	{
-		return clsClient("", "", "", "", "", "", 0.0, clsPerson::enMode::_AddNewMode);
+		return clsClient("", "", "", "", AccNumber, "", 0.0, clsPerson::enMode::_AddNewMode);
 	}
 
 	double GetTotalBalance() const
