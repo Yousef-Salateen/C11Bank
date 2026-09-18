@@ -160,6 +160,7 @@
     <ClInclude Include="Middle Layer\clsUser.h" />
     <ClInclude Include="Middle Layer\clsUserManager.h" />
     <ClInclude Include="UI Layer\clsAddNewClientScreen.h" />
+    <ClInclude Include="UI Layer\clsAddNewUserScreen.h" />
     <ClInclude Include="UI Layer\clsDeleteClientScreen.h" />
     <ClInclude Include="UI Layer\clsDepositScreen.h" />
     <ClInclude Include="UI Layer\clsFindClientScreen.h" />

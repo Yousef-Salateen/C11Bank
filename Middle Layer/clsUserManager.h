@@ -140,9 +140,9 @@ public:
 		}
 	}
 
-	clsUser AddNewObject()
+	clsUser AddNewObject(const std::string& Username)
 	{
-		return clsUser("", "", "", "", "", "", 0, clsPerson::enMode::_AddNewMode);
+		return clsUser("", "", "", "", Username, "", 0, clsPerson::enMode::_AddNewMode);
 	}
 
 	clsUser User(size_t index)

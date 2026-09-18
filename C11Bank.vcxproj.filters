@@ -125,5 +125,8 @@
     <ClInclude Include="UI Layer\clsListUsersScreen.h">
       <Filter>Header Files\UI Layer</Filter>
     </ClInclude>
+    <ClInclude Include="UI Layer\clsAddNewUserScreen.h">
+      <Filter>Header Files\UI Layer</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

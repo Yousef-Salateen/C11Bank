@@ -19,11 +19,6 @@ private:
 		_Mode = Mode;
 	}
 
-	void _setPermissions(int Permissions)
-	{
-		_Permissions = Permissions;
-	}
-
 	void _setMarkedForDelete(bool MarkedForDelete)
 	{
 		_MarkedForDelete = MarkedForDelete;
@@ -77,6 +72,11 @@ public:
 		_Password = Password;
 	}
 
+	void setPermissions(int Permissions)
+	{
+		_Permissions = Permissions;
+	}
+
 	bool HasPermission (enPermissions Permission) const
 	{
 		return (_Permissions & Permission) == Permission;
@@ -84,6 +84,5 @@ public:
 
 	friend class clsUsersData;
 	friend class clsUserManager;
-	//friend class clsManager<clsUser>;
 	friend class clsSession;
 };
