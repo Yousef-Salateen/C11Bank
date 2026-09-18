@@ -119,5 +119,8 @@
     <ClInclude Include="UI Layer\clsTotalBalanceScreen.h">
       <Filter>Header Files\UI Layer</Filter>
     </ClInclude>
+    <ClInclude Include="UI Layer\clsManagUsersScreen.h">
+      <Filter>Header Files\UI Layer</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
