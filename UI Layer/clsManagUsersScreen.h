@@ -7,6 +7,7 @@
 #include "../Middle Layer/clsSession.h"
 #include "clsListUsersScreen.h"
 #include "clsAddNewUserscreen.h"
+#include "clsDeleteUserScreen.h"
 
 class clsManagUsersScreen :
     protected clsScreen
@@ -77,7 +78,7 @@ private:
 	static void _ShowDeleteUserScreen()
 	{
 		_ClearScreen();
-		//clsDeleteUserScreen::DeleteUser();
+		clsDeleteUserScreen::DeleteUser();
 	}
 
 	static void _ShowUpdateUserScreen()
