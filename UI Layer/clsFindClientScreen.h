@@ -15,7 +15,7 @@ public:
 		if (_AccessMessage(clsSession::CurrentUser.HasPermission(enPermissions::eFindClient)))
 			return;
 
-		_DrawScreenHeader("Update Client Screen");
+		_DrawScreenHeader("Find Client Screen");
 		std::string AccNumber = clsInputValidate::Read<std::string>("Please Enter a Valid Account Number: ");
 
 		while (!Clients.IsClientExist(AccNumber))

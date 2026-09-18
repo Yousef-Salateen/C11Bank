@@ -38,7 +38,7 @@ public:
 
 	clsClass Item(size_t index)
 	{
-		if (index >= 0 && index < _vItems.size())
+		if (index < _vItems.size())
 			return *_vItems[index];
 		return clsClass::EmptyObject();
 	}

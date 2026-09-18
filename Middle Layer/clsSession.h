@@ -10,7 +10,7 @@ public:
 
 	~clsSession()
 	{
-		CurrentUser = Users.Find("", "");
+		CurrentUser = clsUser::EmptyObject();
 	}
 
 };

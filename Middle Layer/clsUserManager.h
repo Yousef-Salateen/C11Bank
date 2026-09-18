@@ -145,13 +145,6 @@ public:
 		return clsUser("", "", "", "", Username, "", 0, clsPerson::enMode::_AddNewMode);
 	}
 
-	clsUser User(size_t index)
-	{
-		if (index >= 0 && index < _vItems.size())
-			return *_vItems[index];
-		return clsUser::EmptyObject();
-	}
-
 	bool HasPermission(const std::string& Username, enPermissions Permission)
 	{
 		clsUser* User = _Find(Username);
