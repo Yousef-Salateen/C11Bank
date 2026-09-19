@@ -63,7 +63,7 @@ private:
 
 	void _Deposit(double Amount, clsClient* Client)
 	{
-		if(Client->setBalance(Client->Balance() + Amount));
+		if(Client->setBalance(Client->Balance() + Amount))
 			TotalBalance += Amount;
 
 	}
