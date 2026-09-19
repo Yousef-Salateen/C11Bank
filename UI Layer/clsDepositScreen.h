@@ -23,7 +23,7 @@ public:
         clsClient Client = Clients.Find(AccNumber);
         _PrintClient(Client);
 
-        double Amount = clsInputValidate::Read<double>("Please Enter the Amount to Deposit: ");
+        double Amount = clsInputValidate::ReadPositive<double>("Please Enter the Amount to Deposit: ");
         if (clsInputValidate::ReadBool("Are you sure you want to deposit " + std::to_string(Amount) + " to account " + AccNumber + "?"))
         {
             Clients.DepositTo(Amount, AccNumber);
