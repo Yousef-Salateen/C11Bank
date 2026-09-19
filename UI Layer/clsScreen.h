@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <iomanip>
+#include "../Middle Layer/clsSession.h"
+#include "../External Libs/clsDate.h"
 
 class clsScreen
 {
@@ -15,6 +17,9 @@ protected:
 			std::cout << std::setw(37) << std::left << "" << SubTitle << "\n";
 		}
 		std::cout << std::setw(37) << std::left << "" << "_________________________\n\n";
+
+		std::cout << std::setw(37) << std::left << "" << clsSession::CurrentUser.Username() << "\n";
+		std::cout << std::setw(37) << std::left << "" << "Date: " << clsDate() << "\n" << std::endl;
 	}
 
 	static bool _AccessMessage(bool HasAccess)
