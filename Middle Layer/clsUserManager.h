@@ -103,6 +103,11 @@ public:
 		{
 			return clsManager::enSaveResult::eFailedExistingUsername;
 		}
+		if (User.Username() == "admin")
+		{
+			return clsManager::enSaveResult::eFailedExistingUsername;
+
+		}
 
 		switch (User._Mode)
 		{
@@ -129,7 +134,7 @@ public:
 	{
 		clsUser* User = _Find(Username);
 
-		if (User)
+		if (User && User->Username() != "admin")
 		{
 			_DeleteUser(User);
 			Save();

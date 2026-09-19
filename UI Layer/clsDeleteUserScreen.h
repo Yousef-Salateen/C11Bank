@@ -13,7 +13,7 @@ public:
 		_DrawScreenHeader("Delete User Screen");
 		std::string Username = clsInputValidate::Read<std::string>("Please Enter a Valid Username: ");
 
-		while (!Users.IsUserExist(Username))
+		while (!Users.IsUserExist(Username) || Username == "admin")
 		{
 			Username = clsInputValidate::Read <std::string>("Username is not found, enter another one: ");
 		}
