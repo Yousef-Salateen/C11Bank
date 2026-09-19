@@ -1,6 +1,6 @@
 #pragma once
 
-extern enum enPermissions : short;
+enum enPermissions : short;
 
 #include <vector>
 #include "clsManager.h"

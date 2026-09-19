@@ -1,6 +1,6 @@
 #pragma once
 
-extern enum enPermissions : short;
+enum enPermissions : short;
 
 #include "clsPerson.h"
 #include <string>
