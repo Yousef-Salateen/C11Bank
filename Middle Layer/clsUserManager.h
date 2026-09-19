@@ -39,6 +39,7 @@ private:
 
 	void _AddUser(clsUser* User)
 	{
+		User->_setMode(clsUser::enMode::_UpdateMode);
 		_vItems.emplace_back(User);
 	}
 

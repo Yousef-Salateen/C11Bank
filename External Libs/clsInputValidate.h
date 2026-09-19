@@ -37,6 +37,19 @@ public:
         return var;
     }
 
+    template<typename T>
+    static T ReadPositive(const std::string& Msg, const std::string& ErrorMsg = "Invalid input! Try again.")
+    {
+        T var;
+
+        do
+        {
+            var = Read<T>(Msg, ErrorMsg);
+        } while (var < 0);
+
+        return var;
+    }
+
     static std::string ReadLine(const std::string& Msg)
     {
         std::string str;

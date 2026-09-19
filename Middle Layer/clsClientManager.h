@@ -38,6 +38,7 @@ private:
 
 	void _AddClient(clsClient* Client)
 	{
+		Client->_setMode(clsUser::enMode::_UpdateMode);
 		_vItems.emplace_back(Client);
 		TotalBalance += Client->Balance();
 	}
@@ -62,8 +63,9 @@ private:
 
 	void _Deposit(double Amount, clsClient* Client)
 	{
-		Client->setBalance(Client->Balance() + Amount);
-		TotalBalance += Amount;
+		if(Client->setBalance(Client->Balance() + Amount));
+			TotalBalance += Amount;
+
 	}
 
 	bool _Withdraw(double Amount, clsClient* Client)

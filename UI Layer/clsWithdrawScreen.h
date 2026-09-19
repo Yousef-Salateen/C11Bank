@@ -23,7 +23,7 @@ public:
         clsClient Client = Clients.Find(AccNumber);
         _PrintClient(Client);
 
-        double Amount = clsInputValidate::Read<double>("Please Enter the Amount to Withdraw: ");
+        double Amount = clsInputValidate::ReadPositive<double>("Please Enter the Amount to Withdraw: ");
         if (clsInputValidate::ReadBool("Are you sure you want to withdraw " + std::to_string(Amount) + " from account " + AccNumber + "?"))
         {
             if (Clients.WithdrawFrom(Amount, AccNumber))
