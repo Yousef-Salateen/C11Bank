@@ -45,7 +45,7 @@ public:
         do
         {
             var = Read<T>(Msg, ErrorMsg);
-        } while (var < 0);
+        } while (var <= 0);
 
         return var;
     }
