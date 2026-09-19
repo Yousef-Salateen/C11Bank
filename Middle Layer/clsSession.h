@@ -7,7 +7,7 @@ class clsSession
 {
 public:
 	inline static clsUser CurrentUser = (clsUser::EmptyObject());
-
+	inline static short LoginTries = 3;
 	~clsSession()
 	{
 		CurrentUser = clsUser::EmptyObject();
