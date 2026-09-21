@@ -10,10 +10,8 @@ class clsLoginScreen :
     protected clsScreen
 {
 private:
-    static void _Login()
+    static void _Login(clsSession& Session)
     {
-		clsSession Session;
-
 		std::string Username = clsInputValidate::Read<std::string>("Please Enter Your Username: ");
 		std::string Password = clsInputValidate::Read<std::string>("Please Enter Your Password: ");
 
@@ -30,15 +28,16 @@ private:
 			Session.CurrentUser = Users.Find(Username, Password);
 		}
 
+		Session.LoginTries = 3;
 		clsMainMenuScreen::ShowMainMenuScreen();
     }
 
 public:
 
-    static void Login()
+    static void Login(clsSession& Session)
     {
 		_DrawScreenHeader("Login Screen");
-		_Login();
+		_Login(Session);
     }
 };
 

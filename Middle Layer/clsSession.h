@@ -11,6 +11,7 @@ public:
 	~clsSession()
 	{
 		CurrentUser = clsUser::EmptyObject();
+		LoginTries = 3;
 	}
 
 };
