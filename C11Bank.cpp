@@ -5,6 +5,9 @@
 
 int main()
 {
-	while(clsSession::LoginTries)
-		clsLoginScreen::Login();
+	clsSession Session;
+	while (clsSession::LoginTries)
+	{
+		clsLoginScreen::Login(Session);
+	}
 }
