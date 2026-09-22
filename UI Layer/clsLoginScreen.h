@@ -15,8 +15,8 @@ private:
 		std::string Username = clsInputValidate::Read<std::string>("Please Enter Your Username: ");
 		std::string Password = clsInputValidate::Read<std::string>("Please Enter Your Password: ");
 
-		Session.CurrentUser = Users.Find(Username, Password);
-		while (Session.CurrentUser.IsEmpty())
+		clsUser User = Users.Find(Username, Password);
+		while (User.IsEmpty())
 		{
 			std::cout << "\nInvalid Username or Password, please try again.";
 			std::cout << "\nYou have " << --Session.LoginTries << " tries left\n";
@@ -25,10 +25,10 @@ private:
 
 			Username = clsInputValidate::Read<std::string>("Please Enter Your Username: ");
 			Password = clsInputValidate::Read<std::string>("Please Enter Your Password: ");
-			Session.CurrentUser = Users.Find(Username, Password);
+			User = Users.Find(Username, Password);
 		}
 
-		Session.LoginTries = 3;
+		Session = clsSession(User);
 		clsMainMenuScreen::ShowMainMenuScreen();
     }
 

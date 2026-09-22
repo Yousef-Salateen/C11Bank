@@ -155,5 +155,8 @@
     <ClInclude Include="UI Layer\clsUserScreen.h">
       <Filter>Header Files\UI Layer\User Screens</Filter>
     </ClInclude>
+    <ClInclude Include="Data Layer\clsLogsData.h">
+      <Filter>Header Files\Data Layer</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
