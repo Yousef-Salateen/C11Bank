@@ -2,7 +2,6 @@
 
 #include "clsClientsData.h"
 #include "clsUsersData.h"
-#include "clsLogsData.h"
 
 //This is the class used to handle saving and loading data from files, it is a wrapper class for clsClientsData and clsUsersData classes
 class clsData
@@ -26,10 +25,5 @@ public:
 	static void Save(const std::vector<clsUser*>& vUsers)
 	{
 		clsUsersData::SaveDataToFile(clsUsersData::_UsersFileName, vUsers);
-	}
-
-	static void SaveLog(const std::vector<std::string>& vLogLine)
-	{
-		clsLogsData::AddLogToFile(clsLogsData::_LoginLogsFile, vLogLine);
 	}
 };

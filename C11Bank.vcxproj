@@ -145,7 +145,6 @@
     <ClInclude Include="Data Layer\clsClassData.h" />
     <ClInclude Include="Data Layer\clsClientsData.h" />
     <ClInclude Include="Data Layer\clsData.h" />
-    <ClInclude Include="Data Layer\clsLogsData.h" />
     <ClInclude Include="Data Layer\clsUsersData.h" />
     <ClInclude Include="External Libs\clsDate.h" />
     <ClInclude Include="External Libs\clsFiles.h" />
