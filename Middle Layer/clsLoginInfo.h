@@ -68,5 +68,7 @@ public:
 		return _MarkedForDelete;
 	}
 
+	friend class clsLoginData;
+	friend class clsLoginLogManager;
 };
 

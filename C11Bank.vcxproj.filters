@@ -161,5 +161,8 @@
     <ClInclude Include="Middle Layer\clsLoginInfo.h">
       <Filter>Header Files\Middle Layer</Filter>
     </ClInclude>
+    <ClInclude Include="Middle Layer\clsLoginLogManager.h">
+      <Filter>Header Files\Middle Layer</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

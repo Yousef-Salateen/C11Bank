@@ -157,6 +157,7 @@
     <ClInclude Include="Middle Layer\clsClient.h" />
     <ClInclude Include="Middle Layer\clsClientManager.h" />
     <ClInclude Include="Middle Layer\clsLoginInfo.h" />
+    <ClInclude Include="Middle Layer\clsLoginLogManager.h" />
     <ClInclude Include="Middle Layer\clsManager.h" />
     <ClInclude Include="Middle Layer\clsPerson.h" />
     <ClInclude Include="Middle Layer\clsSession.h" />

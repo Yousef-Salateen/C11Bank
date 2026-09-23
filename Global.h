@@ -2,6 +2,7 @@
 
 #include "Middle Layer/clsClientManager.h"
 #include "Middle Layer/clsUserManager.h"
+#include "Middle Layer/clsLoginLogManager.h"
 
 enum enPermissions : short {
 	eAll = -1, eListClients = 1, eAddNewClient = 2, eDeleteClient = 4, eUpdateClient = 8,
@@ -10,3 +11,4 @@ enum enPermissions : short {
 
 clsClientManager Clients;
 clsUserManager Users;
+clsLoginLogManager LoginLogs;
