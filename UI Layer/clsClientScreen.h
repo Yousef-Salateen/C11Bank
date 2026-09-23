@@ -8,7 +8,7 @@ class clsClientScreen :
     protected clsScreen
 {
 protected:
-    enum enDisplayInfo {eAll = 1, ePinCode, ePhone, eBalance};
+    enum enDisplayInfo {eAll = 1, ePinCode, ePhone, eBalance, eEmail};
 	static void _PrintClientLine(const clsClient& Client, enDisplayInfo ToDisplay = enDisplayInfo::eAll)
 	{
         std::cout << "|" << std::left << std::setw(15) << Client.AccNumber();
@@ -33,18 +33,30 @@ protected:
         std::cout << std::endl;
 	}
 
-    static void _PrintClient(const clsClient& Client)
+    static void _PrintClient(const clsClient& Client, enDisplayInfo ToDisplay = enDisplayInfo::eAll)
     {
         std::cout << "\nClient Card:";
         std::cout << "\n_________________";
         std::cout << "\nFirst Name: " << Client.FirstName();
         std::cout << "\nLast Name: " << Client.LastName();
         std::cout << "\nFull Name: " << Client.FullName();
-        std::cout << "\nEmail: " << Client.Email();
-        std::cout << "\nPhone: " << Client.Phone();
-        std::cout << "\nAccount Number: " << Client.AccNumber();
-        std::cout << "\nPin Code: " << Client.PinCode();
-        std::cout << "\nBalance: " << Client.Balance();
+
+        switch (ToDisplay)
+        {
+        case enDisplayInfo::eAll:
+        case enDisplayInfo::ePinCode:
+            std::cout << "\nPin Code: " << Client.PinCode();
+            if (ToDisplay != enDisplayInfo::eAll) break;
+        case enDisplayInfo::ePhone:
+            std::cout << "\nPhone: " << Client.Phone();
+            if (ToDisplay != enDisplayInfo::eAll) break;
+        case enDisplayInfo::eEmail:
+            std::cout << "\nEmail: " << Client.Email();
+            if (ToDisplay != enDisplayInfo::eAll) break;
+        case enDisplayInfo::eBalance:
+            std::cout << "\nBalance: " << Client.Balance();
+            if (ToDisplay != enDisplayInfo::eAll) break;
+        }
         std::cout << "\n_________________" << std::endl;
     }
 

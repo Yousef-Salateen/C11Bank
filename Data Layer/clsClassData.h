@@ -43,5 +43,12 @@ public:
 		clsFiles::SaveDataToFile(File, vData);
 		File.close();
 	}
+
+	static void SaveLineToFile(const std::string& FileName, const std::string& Line)
+	{
+		std::fstream File(FileName, std::ios::out | std::ios::app);
+		clsFiles::AddLineToFile(File, Line);
+		File.close();
+	}
 };
 
