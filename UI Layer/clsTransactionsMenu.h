@@ -51,7 +51,7 @@ private:
 			_WaitForEnter();
 			break;
 		case enTransactionMenuOptions::eTransfer:
-			_ShowTransferScreen();
+			_ShowUpdateRateScreen();
 			_WaitForEnter();
 			break;
 		case enTransactionMenuOptions::eTransferLog:
@@ -82,7 +82,7 @@ private:
 		clsTotalBalanceScreen::PrintClientList();
 	}
 
-	static void _ShowTransferScreen()
+	static void _ShowUpdateRateScreen()
 	{
 		_ClearScreen();
 		clsTransferScreen::Transfer();
