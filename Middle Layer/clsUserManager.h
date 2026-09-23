@@ -1,12 +1,15 @@
 #pragma once
 
 enum enPermissions : short;
+extern short _EncryptionKey;
 
 #include <vector>
 #include "clsManager.h"
 #include "clsUser.h"
 #include "../Data Layer/clsData.h"
 #include "clsSession.h"
+#include "../External Libs/clsUtility.h"
+#include "../Global.h"
 
 class clsUserManager :
     public clsManager <clsUser> 
@@ -61,7 +64,10 @@ private:
 public:
 	clsUserManager() : clsManager(clsData::LoadUsers)
 	{
-
+		for (clsUser* User : _vItems)
+		{
+			User->setPassword(clsUtility::DecryptText(User->Password(), _EncryptionKey));
+		}
 	}
 
 	~clsUserManager()
@@ -71,6 +77,16 @@ public:
 		{
 			delete User;
 		}
+	}
+
+	void Save() const
+	{
+		std::vector<clsUser*> vTemp(_vItems);
+		for (clsUser* User : _vItems)
+		{
+			User->setPassword(clsUtility::EncryptText(User->Password(), _EncryptionKey));
+		}
+		clsData::Save(vTemp);
 	}
 
 	bool IsUserExist(const std::string& Username) const

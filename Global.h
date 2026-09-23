@@ -10,6 +10,9 @@ enum enPermissions : short {
 	eFindClient = 16, eTransactions = 32, eManageUsers = 64, eListLoginLogs = 128
 };
 
+short _EncryptionKey = 3;
+
+
 clsClientManager Clients;
 clsUserManager Users;
 clsLoginLogManager LoginLogs;
