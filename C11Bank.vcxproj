@@ -173,6 +173,7 @@
     <ClInclude Include="UI Layer\clsFindUserScreen.h" />
     <ClInclude Include="UI Layer\clsListClientsScreen.h" />
     <ClInclude Include="UI Layer\clsListUsersScreen.h" />
+    <ClInclude Include="UI Layer\clsLoginLogsScreen.h" />
     <ClInclude Include="UI Layer\clsLoginScreen.h" />
     <ClInclude Include="UI Layer\clsMainMenuScreen.h" />
     <ClInclude Include="UI Layer\clsManagUsersScreen.h" />

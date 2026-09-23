@@ -68,6 +68,11 @@ public:
 		return _MarkedForDelete;
 	}
 
+	static clsLoginInfo EmptyObject()
+	{
+		return clsLoginInfo("", "", "", 0);
+	}
+
 	friend class clsLoginData;
 	friend class clsLoginLogManager;
 };
