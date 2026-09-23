@@ -21,6 +21,9 @@ private:
 public:
 	static void ListLogins()
 	{
+		if (_AccessMessage(clsSession::CurrentUser.HasPermission(enPermissions::eListLoginLogs)))
+			return;
+
 		std::string Title = "Client List Screen";
 		std::string SubTitle = "(" + std::to_string(Clients.Amount()) + ") Client(s)";
 		_DrawScreenHeader(Title, SubTitle);

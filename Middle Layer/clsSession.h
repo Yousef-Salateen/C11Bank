@@ -23,10 +23,4 @@ public:
 			CurrentUser.Username(), CurrentUser.Password(), CurrentUser.Permissions()));
 	}
 
-	~clsSession()
-	{
-		CurrentUser = clsUser::EmptyObject();
-		LoginTries = 3;
-	}
-
 };

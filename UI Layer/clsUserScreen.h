@@ -97,7 +97,10 @@ protected:
         {
             Permissions |= enPermissions::eManageUsers;
         }
-
+        if (clsInputValidate::ReadBool("Do you want to give Show Logs permission?"))
+        {
+            Permissions |= enPermissions::eListLoginLogs;
+        }
         return Permissions;
     }
 };
