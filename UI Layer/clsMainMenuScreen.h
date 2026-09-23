@@ -12,6 +12,7 @@
 #include "clsTransactionsMenu.h"
 #include "clsManagUsersScreen.h"
 #include "clsLoginLogsScreen.h"
+#include "../clsCurrencyExhangeScreen.h"
 
 class clsMainMenuScreen :
     protected clsScreen
@@ -27,12 +28,13 @@ private:
 		eShowTransactionsScreen,
 		eManageUsersScreen,
 		eShowLoginLogs,
+		eExchangeScreen,
 		eLogout
 	};
 
 	static enMainMenuOptions _ReadMainMenuOption()
 	{
-		return static_cast<enMainMenuOptions>(clsInputValidate::ReadInRange<int>("\nChoose what do you want to do? [1 to 9] : ",
+		return static_cast<enMainMenuOptions>(clsInputValidate::ReadInRange<int>("\nChoose what do you want to do? [1 to 10] : ",
 			1, enMainMenuOptions::eLogout));
 	}
 
@@ -74,6 +76,9 @@ private:
 		case enMainMenuOptions::eShowLoginLogs:
 			_ShowLoginLogs();
 			_WaitForEnter();
+			break;
+		case enMainMenuOptions::eExchangeScreen:
+			_ShowExchaneScreen();
 			break;
 		case enMainMenuOptions::eLogout:
 			_Logout();
@@ -132,6 +137,12 @@ private:
 		clsLoginLogsScreen::ListLogins();
 	}
 
+	static void _ShowExchaneScreen()
+	{
+		_ClearScreen();
+		clsCurrencyExhangeScreen::ShowExchangeScreen();
+	}
+
 	static void _Logout()
 	{
 		_ClearScreen();
@@ -153,7 +164,8 @@ public:
 			std::cout << std::setw(37) << std::left << "" << "[6] Show Transactions Screen.\n";
 			std::cout << std::setw(37) << std::left << "" << "[7] Manage Users Screen.\n";
 			std::cout << std::setw(37) << std::left << "" << "[8] Login Logs List.\n";
-			std::cout << std::setw(37) << std::left << "" << "[9] Logout.\n";
+			std::cout << std::setw(37) << std::left << "" << "[9] Currency Exhange.\n";
+			std::cout << std::setw(37) << std::left << "" << "[10] Logout.\n";
 
 			MainMenuOption = _ReadMainMenuOption();
 			_PerformMainMenuOption(MainMenuOption);

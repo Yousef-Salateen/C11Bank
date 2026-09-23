@@ -142,7 +142,12 @@
     <ClCompile Include="C11Bank.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="clsCalculatorScreen.h" />
     <ClInclude Include="clsCurrencyExchange.h" />
+    <ClInclude Include="clsCurrencyExhangeScreen.h" />
+    <ClInclude Include="clsFindCurrencyScreen.h" />
+    <ClInclude Include="clsListCurrenciesScreen.h" />
+    <ClInclude Include="clsUpdateRateScreen.h" />
     <ClInclude Include="Data Layer\clsClassData.h" />
     <ClInclude Include="Data Layer\clsClientsData.h" />
     <ClInclude Include="Data Layer\clsData.h" />

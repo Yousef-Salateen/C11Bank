@@ -19,7 +19,7 @@ private:
 	static clsCurrencyExchange _ConvertLineToRecord(const std::string& Line, const std::string& Seperator = "#//#")
 	{
 		std::vector<std::string> vInfo = clsFiles::SeperateLineData(Line, Seperator);
-		return clsCurrencyExchange(vInfo[0], vInfo[1], vInfo[3], std::stod(vInfo[4]), _eUpdateMode);
+		return clsCurrencyExchange(vInfo[0], vInfo[1], vInfo[2], std::stod(vInfo[3]), _eUpdateMode);
 	}
 
 	static std::vector<clsCurrencyExchange> _LoadDataFromFile()
@@ -168,6 +168,19 @@ public:
 	static std::vector<clsCurrencyExchange> GetCurrencyList()
 	{
 		return _LoadDataFromFile();
+	}
+
+	double ConvertToOtherCurrency(double Amount, const clsCurrencyExchange& Currency)
+	{
+		double USDAmount = Amount / this->Rate();
+
+		if(Currency.CurrencyCode() == "USD")
+			return USDAmount;
+		else
+		{
+			double CalculatedAmount = USDAmount * Currency.Rate();
+			return CalculatedAmount;
+		}
 	}
 };
 
