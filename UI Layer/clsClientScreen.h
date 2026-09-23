@@ -51,7 +51,7 @@ protected:
             std::cout << "\nPhone: " << Client.Phone();
             if (ToDisplay != enDisplayInfo::eAll) break;
         case enDisplayInfo::eEmail:
-            std::cout << "\Email: " << Client.Email();
+            std::cout << "\nEmail: " << Client.Email();
             if (ToDisplay != enDisplayInfo::eAll) break;
         case enDisplayInfo::eBalance:
             std::cout << "\nBalance: " << Client.Balance();

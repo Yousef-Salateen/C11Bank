@@ -22,7 +22,7 @@ public:
 	void AddNewLog(const clsLoginInfo& LoginInfo)
 	{
 		_vItems.emplace_back(new clsLoginInfo(LoginInfo));
-		clsData::SaveLog(clsLoginData::ConvertObjectToLine(_vItems.back()));
+		clsData::SaveLogin(clsLoginData::ConvertObjectToLine(_vItems.back()));
 	}
 };
 

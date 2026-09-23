@@ -18,7 +18,7 @@ public:
 
 		if (vLoginData.empty())
 		{
-			return clsLoginInfo("", "", "", 0);
+			return clsLoginInfo::EmptyObject();
 		}
 
 		return clsLoginInfo(vLoginData.at(0), vLoginData.at(1), vLoginData.at(2), std::stoi(vLoginData.at(3)));

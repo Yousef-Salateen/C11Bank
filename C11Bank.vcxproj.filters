@@ -170,5 +170,14 @@
     <ClInclude Include="UI Layer\clsTransferScreen.h">
       <Filter>Header Files\UI Layer\Transactions Screens</Filter>
     </ClInclude>
+    <ClInclude Include="Middle Layer\clsTransferInfo.h">
+      <Filter>Header Files\Middle Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Middle Layer\clsTransferLogManager.h">
+      <Filter>Header Files\Middle Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Data Layer\clsTransferData.h">
+      <Filter>Header Files\Data Layer</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

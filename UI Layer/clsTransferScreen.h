@@ -1,6 +1,7 @@
 #pragma once
 
 #include "clsClientScreen.h"
+#include "../Global.h"
 
 class clsTransferScreen :
     protected clsClientScreen
@@ -35,6 +36,9 @@ public:
             {
                 Clients.DepositTo(Amount, ToClient.AccNumber());
                 std::cout << "Transfer Successful!" << std::endl;
+                TransferLogs.AddNewLog(clsTransferInfo(clsDate::GetSystemDateTimeString(), FromClient.AccNumber(), ToClient.AccNumber(), 
+                    Amount, FromClient.Balance() - Amount, ToClient.Balance() + Amount, clsSession::CurrentUser.Username()));
+
                 _PrintClient(Clients.Find(FromClient.AccNumber()), enDisplayInfo::eBalance);
                 _PrintClient(Clients.Find(ToClient.AccNumber()), enDisplayInfo::eBalance);
             }

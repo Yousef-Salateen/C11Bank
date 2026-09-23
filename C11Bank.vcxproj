@@ -146,6 +146,7 @@
     <ClInclude Include="Data Layer\clsClientsData.h" />
     <ClInclude Include="Data Layer\clsData.h" />
     <ClInclude Include="Data Layer\clsLoginData.h" />
+    <ClInclude Include="Data Layer\clsTransferData.h" />
     <ClInclude Include="Data Layer\clsUsersData.h" />
     <ClInclude Include="External Libs\clsDate.h" />
     <ClInclude Include="External Libs\clsFiles.h" />
@@ -161,6 +162,8 @@
     <ClInclude Include="Middle Layer\clsManager.h" />
     <ClInclude Include="Middle Layer\clsPerson.h" />
     <ClInclude Include="Middle Layer\clsSession.h" />
+    <ClInclude Include="Middle Layer\clsTransferInfo.h" />
+    <ClInclude Include="Middle Layer\clsTransferLogManager.h" />
     <ClInclude Include="Middle Layer\clsUser.h" />
     <ClInclude Include="Middle Layer\clsUserManager.h" />
     <ClInclude Include="UI Layer\clsAddNewClientScreen.h" />
