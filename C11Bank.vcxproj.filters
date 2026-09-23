@@ -167,5 +167,8 @@
     <ClInclude Include="UI Layer\clsLoginLogsScreen.h">
       <Filter>Header Files\UI Layer</Filter>
     </ClInclude>
+    <ClInclude Include="UI Layer\clsTransferScreen.h">
+      <Filter>Header Files\UI Layer\Transactions Screens</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
