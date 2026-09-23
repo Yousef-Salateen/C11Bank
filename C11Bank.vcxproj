@@ -183,6 +183,7 @@
     <ClInclude Include="UI Layer\clsScreen.h" />
     <ClInclude Include="UI Layer\clsTotalBalanceScreen.h" />
     <ClInclude Include="UI Layer\clsTransactionsMenu.h" />
+    <ClInclude Include="UI Layer\clsTransferLogScreen.h" />
     <ClInclude Include="UI Layer\clsTransferScreen.h" />
     <ClInclude Include="UI Layer\clsUpdateClientScreen.h" />
     <ClInclude Include="UI Layer\clsUpdateUserScreen.h" />

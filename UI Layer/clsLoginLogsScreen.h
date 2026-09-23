@@ -28,11 +28,10 @@ public:
 		std::string SubTitle = "(" + std::to_string(Clients.Amount()) + ") Client(s)";
 		_DrawScreenHeader(Title, SubTitle);
 
-		std::cout << "|" << std::left << std::setw(15) << "Account Number";
-		std::cout << "|" << std::left << std::setw(40) << "Name";
-		std::cout << "|" << std::left << std::setw(10) << "Pin Code";
-		std::cout << "|" << std::left << std::setw(15) << "Phone Number";
-		std::cout << "|" << std::left << std::setw(10) << "Balance" << std::endl;
+		std::cout << "|" << std::left << std::setw(40) << "Date";
+		std::cout << "|" << std::left << std::setw(15) << "User Name";
+		std::cout << "|" << std::left << std::setw(10) << "Password";
+		std::cout << "|" << std::left << std::setw(10) << "Permissions" << std::endl;
 		std::cout << "\n____________________________________________________________________________________________________________________" << std::endl;
 
 		if (Clients.Amount())

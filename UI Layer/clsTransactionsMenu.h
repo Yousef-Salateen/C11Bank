@@ -8,6 +8,7 @@
 #include "clsWithdrawScreen.h"
 #include "clsTotalBalanceScreen.h"
 #include "clsTransferScreen.h"
+#include "clsTransferLogScreen.h"
 
 class clsTransactionsMenu :
     protected clsScreen
@@ -19,12 +20,13 @@ private:
 		eWithdraw,
 		eTotalBalance,
 		eTransfer,
+		eTransferLog,
 		eExit
 	};
 
 	static enTransactionMenuOptions _ReadTransactionMenuOption()
 	{
-		return static_cast<enTransactionMenuOptions>(clsInputValidate::ReadInRange<int>("\nChoose what do you want to do? [1 to 5] : ",
+		return static_cast<enTransactionMenuOptions>(clsInputValidate::ReadInRange<int>("\nChoose what do you want to do? [1 to 6] : ",
 			1, enTransactionMenuOptions::eExit));
 	}
 
@@ -50,6 +52,10 @@ private:
 			break;
 		case enTransactionMenuOptions::eTransfer:
 			_ShowTransferScreen();
+			_WaitForEnter();
+			break;
+		case enTransactionMenuOptions::eTransferLog:
+			_ShowTransferLog();
 			_WaitForEnter();
 			break;
 		default:
@@ -82,6 +88,12 @@ private:
 		clsTransferScreen::Transfer();
 	}
 
+	static void _ShowTransferLog()
+	{
+		_ClearScreen();
+		clsTransferlogScreen::ListTransfers();
+	}
+
 	static void _ShowExitScreen()
 	{
 		_ClearScreen();
@@ -106,7 +118,8 @@ public:
 			std::cout << std::setw(37) << std::left << "" << "[2] Withdraw.\n";
 			std::cout << std::setw(37) << std::left << "" << "[3] Total Balance.\n";
 			std::cout << std::setw(37) << std::left << "" << "[4] Transfer.\n";
-			std::cout << std::setw(37) << std::left << "" << "[5] Exit.\n";
+			std::cout << std::setw(37) << std::left << "" << "[5] Transfer Logs.\n";
+			std::cout << std::setw(37) << std::left << "" << "[6] Exit.\n";
 
 			MainMenuOption = _ReadTransactionMenuOption();
 			_PerformTransactionMenuOption(MainMenuOption);
