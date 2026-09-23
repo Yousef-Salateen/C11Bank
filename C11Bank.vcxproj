@@ -145,6 +145,7 @@
     <ClInclude Include="Data Layer\clsClassData.h" />
     <ClInclude Include="Data Layer\clsClientsData.h" />
     <ClInclude Include="Data Layer\clsData.h" />
+    <ClInclude Include="Data Layer\clsLoginData.h" />
     <ClInclude Include="Data Layer\clsUsersData.h" />
     <ClInclude Include="External Libs\clsDate.h" />
     <ClInclude Include="External Libs\clsFiles.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="Global.h" />
     <ClInclude Include="Middle Layer\clsClient.h" />
     <ClInclude Include="Middle Layer\clsClientManager.h" />
+    <ClInclude Include="Middle Layer\clsLoginInfo.h" />
     <ClInclude Include="Middle Layer\clsManager.h" />
     <ClInclude Include="Middle Layer\clsPerson.h" />
     <ClInclude Include="Middle Layer\clsSession.h" />
