@@ -82,7 +82,7 @@ public:
 	void Save() const
 	{
 		std::vector<clsUser*> vTemp(_vItems);
-		for (clsUser* User : _vItems)
+		for (clsUser* User : vTemp)
 		{
 			User->setPassword(clsUtility::EncryptText(User->Password(), _EncryptionKey));
 		}
